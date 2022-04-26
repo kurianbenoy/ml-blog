@@ -11,15 +11,15 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/fastai/huggingface/translation/fine%20tuning/malayalam/2022/04/25/_03_13_huggingace_translation_models.html" />
-<meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/fastai/huggingface/translation/fine%20tuning/malayalam/2022/04/25/_03_13_huggingace_translation_models.html" />
+<link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/fastai/huggingface/translation/fine%20tuning/malayalam/2022/03/13/hfenml-translate.html" />
+<meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/fastai/huggingface/translation/fine%20tuning/malayalam/2022/03/13/hfenml-translate.html" />
 <meta property="og:site_name" content="KurianBenoy" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-04-25T00:00:00-05:00" />
+<meta property="article:published_time" content="2022-03-13T00:00:00-06:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Building a fine-tuned translation system for English-Malayalam" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-04-25T00:00:00-05:00","datePublished":"2022-04-25T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Building a fine-tuned translation system for English-Malayalam","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastai/huggingface/translation/fine%20tuning/malayalam/2022/04/25/_03_13_huggingace_translation_models.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastai/huggingface/translation/fine%20tuning/malayalam/2022/04/25/_03_13_huggingace_translation_models.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-03-13T00:00:00-06:00","datePublished":"2022-03-13T00:00:00-06:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Building a fine-tuned translation system for English-Malayalam","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastai/huggingface/translation/fine%20tuning/malayalam/2022/03/13/hfenml-translate.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastai/huggingface/translation/fine%20tuning/malayalam/2022/03/13/hfenml-translate.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ml-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kurianbenoy.github.io/ml-blog/feed.xml" title="KurianBenoy" /><link rel="shortcut icon" type="image/x-icon" href="/ml-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -90,8 +90,8 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Building a fine-tuned translation system for English-Malayalam</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-04-25T00:00:00-05:00" itemprop="datePublished">
-        Apr 25, 2022
+    <h1 class="post-title p-name" itemprop="name headline">Building a fine-tuned translation system for English-Malayalam</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-03-13T00:00:00-06:00" itemprop="datePublished">
+        Mar 13, 2022
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name">Kurian Benoy</span></span>
@@ -128,19 +128,19 @@ window.onload = wrap_img;
         <div class="pb-5 d-flex flex-justify-center">
           <div class="px-2">
 
-    <a href="https://github.com/kurianbenoy/ml-blog/tree/master/_notebooks/2022_03_13_huggingace_translation_models.ipynb" role="button" target="_blank">
+    <a href="https://github.com/kurianbenoy/ml-blog/tree/master/_notebooks/2022-03-13-hfenml-translate.ipynb" role="button" target="_blank">
 <img class="notebook-badge-image" src="/ml-blog/assets/badges/github.svg" alt="View On GitHub">
     </a>
 </div>
 
           
           <div class="px-2">
-    <a href="https://colab.research.google.com/github/kurianbenoy/ml-blog/blob/master/_notebooks/2022_03_13_huggingace_translation_models.ipynb" target="_blank">
+    <a href="https://colab.research.google.com/github/kurianbenoy/ml-blog/blob/master/_notebooks/2022-03-13-hfenml-translate.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/ml-blog/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
           <div class="px-2">
-  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fkurianbenoy%2Fml-blog%2Fblob%2Fmaster%2F_notebooks%2F2022_03_13_huggingace_translation_models.ipynb" target="_blank">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fkurianbenoy%2Fml-blog%2Fblob%2Fmaster%2F_notebooks%2F2022-03-13-hfenml-translate.ipynb" target="_blank">
       <img class="notebook-badge-image" src="/ml-blog/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
   </a>
 </div>
@@ -179,7 +179,7 @@ window.onload = wrap_img;
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
-# file to edit: _notebooks/2022_03_13_huggingace_translation_models.ipynb
+# file to edit: _notebooks/2022-03-13-hfenml-translate.ipynb
 -->
 
 <div class="container" id="notebook-container">
@@ -1473,7 +1473,7 @@ Dataset kde4 downloaded and prepared to /root/.cache/huggingface/datasets/kde4/e
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/ml-blog/fastai/huggingface/translation/fine%20tuning/malayalam/2022/04/25/_03_13_huggingace_translation_models.html" hidden></a>
+</script><a class="u-url" href="/ml-blog/fastai/huggingface/translation/fine%20tuning/malayalam/2022/03/13/hfenml-translate.html" hidden></a>
 </article>
 
       </div>
