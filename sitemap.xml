@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://kurianbenoy.github.io/ml-blog/jupyter/2020/02/20/test.html</loc>
-<lastmod>2020-02-20T00:00:00-06:00</lastmod>
-</url>
-<url>
 <loc>https://kurianbenoy.github.io/ml-blog/2022/02/21/Starting_my_ML_blog.html</loc>
 <lastmod>2022-02-21T00:00:00-06:00</lastmod>
+</url>
+<url>
+<loc>https://kurianbenoy.github.io/ml-blog/2022/02/27/QuestionAnsweringWithHF.html</loc>
+<lastmod>2022-02-27T00:00:00-06:00</lastmod>
 </url>
 <url>
 <loc>https://kurianbenoy.github.io/ml-blog/fastai/huggingface/translation/fine%20tuning/malayalam/2022/03/13/hfenml-translate.html</loc>
 <lastmod>2022-03-13T00:00:00-06:00</lastmod>
 </url>
 <url>
-<loc>https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/04/24/fastai-50-ipynb.html</loc>
-<lastmod>2022-04-24T00:00:00-05:00</lastmod>
-</url>
-<url>
-<loc>https://kurianbenoy.github.io/ml-blog/2022/04/25/_02_27_QuestionAnsweringWithHF.html</loc>
-<lastmod>2022-04-25T00:00:00-05:00</lastmod>
+<loc>https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/04/26/fastai-50-ipynb.html</loc>
+<lastmod>2022-04-26T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>https://kurianbenoy.github.io/ml-blog/about/</loc>
