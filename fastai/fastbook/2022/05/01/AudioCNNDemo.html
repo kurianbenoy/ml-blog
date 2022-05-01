@@ -9,8 +9,8 @@
 <meta property="og:title" content="Music genre classification using fast.ai" />
 <meta name="author" content="Kurian Benoy" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="First side-project done while attending Practical Deep Learning for Coders Course" />
-<meta property="og:description" content="First side-project done while attending Practical Deep Learning for Coders Course" />
+<meta name="description" content="A side-project done while attending Practical Deep Learning for Coders Course" />
+<meta property="og:description" content="A side-project done while attending Practical Deep Learning for Coders Course" />
 <link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/01/AudioCNNDemo.html" />
 <meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/01/AudioCNNDemo.html" />
 <meta property="og:site_name" content="KurianBenoy" />
@@ -21,7 +21,7 @@
 <meta property="twitter:image" content="https://kurianbenoy.github.io/ml-blog/images/music.png" />
 <meta property="twitter:title" content="Music genre classification using fast.ai" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-05-01T00:00:00-05:00","datePublished":"2022-05-01T00:00:00-05:00","description":"First side-project done while attending Practical Deep Learning for Coders Course","headline":"Music genre classification using fast.ai","image":"https://kurianbenoy.github.io/ml-blog/images/music.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/01/AudioCNNDemo.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/01/AudioCNNDemo.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-05-01T00:00:00-05:00","datePublished":"2022-05-01T00:00:00-05:00","description":"A side-project done while attending Practical Deep Learning for Coders Course","headline":"Music genre classification using fast.ai","image":"https://kurianbenoy.github.io/ml-blog/images/music.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/01/AudioCNNDemo.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/01/AudioCNNDemo.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ml-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kurianbenoy.github.io/ml-blog/feed.xml" title="KurianBenoy" /><link rel="shortcut icon" type="image/x-icon" href="/ml-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -97,7 +97,7 @@ window.onload = wrap_img;
 
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">Music genre classification using fast.ai</h1>
-<p class="page-description">First side-project done while attending Practical Deep Learning for Coders Course</p>
+<p class="page-description">A side-project done while attending Practical Deep Learning for Coders Course</p>
 <p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-05-01T00:00:00-05:00" itemprop="datePublished">
         May 1, 2022
       </time>• 
@@ -171,8 +171,8 @@ window.onload = wrap_img;
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>During first lesson of Practical Deep Learning for Coders course, Jeremy had mentioned how using simple 
-computer vision model we build we can build even a model to classify audio.</p>
-<p>Recently a Kaggle grandmaster <a href="https://www.kaggle.com/robikscube">Rob Mulla</a> conducted a challenge to classify music according to what genre it was. Let's look how using a simple computer vision model which was taught in the first lesson of fast.ai works good.</p>
+computer vision model we can build even a model to classify audio with image classification model itself.</p>
+<p>Recently Kaggle grandmaster <a href="https://www.kaggle.com/robikscube">Rob Mulla</a> conducted a challenge to classify music according to what genre it was. At stakes there was a RTX 3080 Ti GPU. Let's look how we can classify music genres using a simple computer vision model which was taught in the first lesson of fast.ai.</p>
 
 </div>
 </div>
@@ -183,7 +183,11 @@ computer vision model we build we can build even a model to classify audio.</p>
 <h2 id="Downloading-packages-and-importing-libraries">
 <a class="anchor" href="#Downloading-packages-and-importing-libraries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Downloading packages and importing libraries<a class="anchor-link" href="#Downloading-packages-and-importing-libraries"> </a>
 </h2>
-<p>Note: I had already installed fastai, pytorch for training this model before hand.</p>
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>I had already installed fastai, pytorch for training this model before hand.
+</div>
 
 </div>
 </div>
@@ -259,10 +263,10 @@ computer vision model we build we can build even a model to classify audio.</p>
 </div>
 </center>
 
-For this competition you need two datasets:
+<p>For this competition you need two datasets:</p>
 <ol>
-<li>The competition data</li>
-<li>Audio data convert to melspectograms in form of images</li>
+<li><a href="https://www.kaggle.com/competitions/kaggle-pog-series-s01e02/data">The competition data</a></li>
+<li><a href="https://www.kaggle.com/datasets/dienhoa/music-genre-spectrogram-pogchamps">Image data generated from converting audio to melspectograms in form of images</a></li>
 </ol>
 <p>The data provided here are over 20,000 royalty free song samples (30 second clips) and their musical genres. Your task is to create a machine learning algorithm capable of predicting the genres of unlabeled music files. Create features, design architectures, do whatever it takes to predict them the best.</p>
 <p><a href="https://www.kaggle.com/code/jhoward/getting-started-with-nlp-for-absolute-beginners">The code for downloading data from kaggle has been adopted from Jeremy's notebook</a></p>
@@ -548,6 +552,14 @@ For this competition you need two datasets:
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Shows a highly imbalanced dataset</strong></p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -789,19 +801,19 @@ Name: genre, dtype: int64</pre>
 <h2 id="Loading-Data-using-fastai-DataLoaders">
 <a class="anchor" href="#Loading-Data-using-fastai-DataLoaders" aria-hidden="true"><span class="octicon octicon-link"></span></a>Loading Data using fastai DataLoaders<a class="anchor-link" href="#Loading-Data-using-fastai-DataLoaders"> </a>
 </h2>
-<p>In creating this notebook. I spend most of my time cleaning and sorting out data for training image models using fast.ai. 
-This is something which you as a practitioner experience, compared to learning all the theory and backpropogation algorithm.
-Most of the time is spend as a datascientist on things like this rather than writing algorithms from scratch.</p>
-<p>So let's see how we load this data using fast.ai. Both the approaches of loading data works, but the first approach as a disadvantage, which
+<p>For creating this notebook, I spend a major portion of my time in cleaning and sorting out appropriate datablocks/dataloaders for training image models using fast.ai. This is something which you as a practitioner experience, compared to learning all the theory and backpropogation algorithm.</p>
+<p>So let's see how we load this data using fast.ai. There are two approaches which we will discuss below. Both the approaches of loading data works, but the first approach as a disadvantage, which
 I will tell in a moment.</p>
 <p><strong>Approach 1. Using DataBlock and loading images</strong></p>
 <ul>
-<li>Create a data frame <code>temp_train</code> and create new column is_valid </li>
-<li>is_valid is created for using ColSplitter in fast.ai</li>
-<li>Now set <code>get_x</code> which specifies the path of files for inputting data which is set via <code>lambda o:f'{path}/'+o.path</code>
+<li>Create a data frame <code>temp_train</code> and create new column <code>is_valid</code>
+</li>
+<li>
+<code>is_valid</code> is default column named created for using <a href="https://docs.fast.ai/data.transforms.html#ColSplitter">ColSplitter</a>
+</li>
+<li>Now set <code>get_x</code> which specifies the path of files for inputting data which is set as base_path+filename path: <em>lambda o:f'{path}/'+o.path</em>
 </li>
 <li>Now set <code>get_y</code> which specifies the variable to predict, ie the genre of music</li>
-<li>Create DataBlock, using DataBlock.dataloaders show the model</li>
 </ul>
 
 </div>
@@ -949,7 +961,7 @@ I will tell in a moment.</p>
 </div>
 </center>
 
-Yet when it came to export models, due to usage of lamda method. I got <a href="https://gist.github.com/kurianbenoy/e672bf20831d14af47436300a4951fd5">Pickling error</a> as the model was not able to be exported with <code>learn.export()</code> method.
+<p>Yet when it came to export models, due to usage of <strong>lamda method in DataBlock</strong>. I got <a href="https://gist.github.com/kurianbenoy/e672bf20831d14af47436300a4951fd5">Pickling error</a> as the model was not able to be exported with <code>learn.export()</code> method.</p>
 
 </div>
 </div>
@@ -958,7 +970,7 @@ Yet when it came to export models, due to usage of lamda method. I got <a href="
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>2. Using DataLoaders methods with loading from dataframe method</strong></p>
-<p>This got me into using approach that using <code>ImageDataLoaders.from_df</code> in fastai. Let's first take a look at our dataframe:</p>
+<p>This issue got me into using approach that using <code>ImageDataLoaders.from_df</code> in fastai. Let's first take a look at our <code>df_train</code> dataframe:</p>
 
 </div>
 </div>
@@ -1069,11 +1081,10 @@ Yet when it came to export models, due to usage of lamda method. I got <a href="
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>If you look at the dataframe, we know that on appending to the path, the filepath column.</p>
 <ul>
-<li>This is the exact value for <code>get_x</code> method in fastai fn_col = 1, specifies the column name <code>filepath</code> at iloc <code>1</code> is filename</li>
-<li>label or <code>get_y</code> is specified by the column name <code>genre</code> at iloc <code>3</code>
-</li>
+<li>This is the exact value for <code>get_x</code> method in fastai <code>fn_col = 1</code> which specifies the column name <code>filepath</code> at position 1.</li>
+<li>label or <code>get_y</code> is specified by the column name <code>genre</code> at position 3.</li>
 <li>valid_pct (ensure what percentage of data to be used for validation)</li>
-<li>y_block=CategoryBlock to ensure it's used for multi-class classification and not multi-label</li>
+<li>y_block=CategoryBlock to ensure it's used for normal classification only and not multi-label</li>
 </ul>
 
 </div>
@@ -1669,7 +1680,7 @@ To https://huggingface.co/kurianbenoy/music_genre_classification_baseline
 <a class="anchor" href="#Conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion<a class="anchor-link" href="#Conclusion"> </a>
 </h2>
 <p>We trained a ML model which can identify with 54.4% accuracy to classify in a music file which genre it is. It's not so bad for a baseline model.
-Dien Hoa Truong has shared some techniques which he learned during Kaggle competition with music genres.
+Dien Hoa Truong has shared some techniques which he learned during Kaggle competition with music genres. 
 
 </p>
 <center>
@@ -1681,7 +1692,7 @@ Dien Hoa Truong has shared some techniques which he learned during Kaggle compet
 </div>
 </center>
 
-Thanks for reading <img class="emoji" title=":pray:" alt=":pray:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64f.png" height="20" width="20">
+<p>Thanks for reading <img class="emoji" title=":pray:" alt=":pray:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64f.png" height="20" width="20"></p>
 
 </div>
 </div>
