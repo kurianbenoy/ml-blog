@@ -9,8 +9,8 @@
 <meta property="og:title" content="Practical Deep Learning for Coders Course - Lesson 2" />
 <meta name="author" content="Kurian Benoy" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This blog-post series captures my weekly notes while I attend the fastaiv5 course conducted by University of Queensland with fast.ai. So off to week2." />
-<meta property="og:description" content="This blog-post series captures my weekly notes while I attend the fastaiv5 course conducted by University of Queensland with fast.ai. So off to week2." />
+<meta name="description" content="This blog-post series captures my weekly notes while I attend the fastaiv5 course conducted by University of Queensland with fast.ai. So off to week2 where we learn about productionizing ML models and how to get good accuracy." />
+<meta property="og:description" content="This blog-post series captures my weekly notes while I attend the fastaiv5 course conducted by University of Queensland with fast.ai. So off to week2 where we learn about productionizing ML models and how to get good accuracy." />
 <link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/03/fastai-52.html" />
 <meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/03/fastai-52.html" />
 <meta property="og:site_name" content="KurianBenoy" />
@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Practical Deep Learning for Coders Course - Lesson 2" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-05-03T00:00:00-05:00","datePublished":"2022-05-03T00:00:00-05:00","description":"This blog-post series captures my weekly notes while I attend the fastaiv5 course conducted by University of Queensland with fast.ai. So off to week2.","headline":"Practical Deep Learning for Coders Course - Lesson 2","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/03/fastai-52.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/03/fastai-52.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-05-03T00:00:00-05:00","datePublished":"2022-05-03T00:00:00-05:00","description":"This blog-post series captures my weekly notes while I attend the fastaiv5 course conducted by University of Queensland with fast.ai. So off to week2 where we learn about productionizing ML models and how to get good accuracy.","headline":"Practical Deep Learning for Coders Course - Lesson 2","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/03/fastai-52.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/03/fastai-52.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ml-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kurianbenoy.github.io/ml-blog/feed.xml" title="KurianBenoy" /><link rel="shortcut icon" type="image/x-icon" href="/ml-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -90,7 +90,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Practical Deep Learning for Coders Course - Lesson 2</h1><p class="page-description">This blog-post series captures my weekly notes while I attend the <a href='https://itee.uq.edu.au/event/2022/practical-deep-learning-coders-uq-fastai'>fastaiv5 course conducted by University of Queensland with fast.ai</a>. So off to week2.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-05-03T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Practical Deep Learning for Coders Course - Lesson 2</h1><p class="page-description">This blog-post series captures my weekly notes while I attend the <a href='https://itee.uq.edu.au/event/2022/practical-deep-learning-coders-uq-fastai'>fastaiv5 course conducted by University of Queensland with fast.ai</a>. So off to week2 where we learn about productionizing ML models and how to get good accuracy.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-05-03T00:00:00-05:00" itemprop="datePublished">
         May 3, 2022
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -175,7 +175,7 @@ booked by someone else. Jeremy was really really pumped for this lesson and it's
 </div>
 </center>
 
-Jeremy mentioned some technique on using Jupyter notebooks, and asked to take a look at jupyter notebooks instances. The navigate section was really explained by him. [24:00]
+<p>Jeremy mentioned some technique on using Jupyter notebooks, and asked to take a look at jupyter extensions. The navigation section and how to collapse headings was explained during class. [24:00]</p>
 <h2 id="Fastbook-Chapter-2">
 <a class="anchor" href="#Fastbook-Chapter-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fastbook Chapter 2<a class="anchor-link" href="#Fastbook-Chapter-2"> </a>
 </h2>
@@ -184,12 +184,14 @@ thing which is covered in chapter 2 of Deep Learning book To build grizzly bears
 <p>Few things have changed in book in this version:</p>
 <ul>
 <li>using <code>search_images_ddg</code> instead of bing search apis</li>
-<li>using huggingfaces as deployment instead of voila even though it's still works</li>
+<li>using <code>huggingfaces spaces</code> as deployment instead of voila even though it's still works</li>
 </ul>
-<p>RandomResizedCrop using fastai had some questions from Alex:</p>
+<p><code>RandomResizedCrop using fastai had some questions from Alex:</code></p>
 <p>Does randomresized crop duplicate the image -- i.e. you get multiple copies and you ensure that all the parts of the image are used in training? or does it just make one crop? Jeremy answered it in video at [32:30].</p>
-<p>Sanyam mentioned that during this augmentation is very helpful:</p>
-<p>Build a good model. Understand and took a look at data and see what can be done to clean this dataset, as you slowly progress on training models. Actually this technique is SUPER helpful-in a recent interview, Chris Deotte (4x Grandmaster) shared how these resizing techniques helped them win a solo gold. This was in the petfinder Kaggle competition (2nd run of the comp)</p>
+<p>Sanyam mentioned that RandomResized crop as a augmentation is very helpful:</p>
+<blockquote>
+<p>Actually this technique is SUPER helpful-in a recent interview, Chris Deotte (4x Grandmaster) shared how these resizing techniques helped them win a solo gold. This was in the petfinder Kaggle competition (2nd run of the comp)</p>
+</blockquote>
 
 </div>
 </div>
@@ -197,25 +199,43 @@ thing which is covered in chapter 2 of Deep Learning book To build grizzly bears
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Note: Jeremy is running on a laptop with 4GB GPU. Jeremy says in GPU, just run one thing at a time. Else you will get CUDA error</strong></p>
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>Jeremy is running on a laptop with 4GB GPU. Jeremy says in GPU, just run one thing at a time else you will get CUDA error.
+</div>
 <h2 id="How-to-do-fast.ai-course">
 <a class="anchor" href="#How-to-do-fast.ai-course" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to do fast.ai course<a class="anchor-link" href="#How-to-do-fast.ai-course"> </a>
 </h2>
-<p>Tips for people in Yellow bucket:</p>
-<p>If you are in yellow, always stop try. First go ahead and watch video fully without try anything in jupyter. Then watch again and follow the course. This is an unusual way but it's very effective.</p>
-<p>I asked <strong>Wayde Gilliam</strong> after the lesson about his process of watching lectures, which he shared graciously with me.</p>
-
-<pre><code>1. Watch the livestream and jot down timestamp to go back to for anything I found interesting in journal A (or just a piece of paper)
-
-2. Go back thru video after 2-3 days, hit those spots I noted during the livestream.  Will write detailed notes in another Journal (we'll call that journal B)
-
-There's too much info to digest in real-time so this approach works well and its what I've been doing for 4-5 yrs.</code></pre>
-<p>Pointed to tanishq tutorial on <a href="https://tmabraham.github.io/blog/gradio_hf_spaces_tutorial">Gradio + HuggingFace Spaces: A Tutorial check it out</a>.</p>
-<p>Hamel who was a employee in github previously, is even using github desktop. Yet most of time we use terminal. In windows, we have WSL, just use ubuntu with windows terminal. Any time Jeremy works, he just uses windows terminal. He showed installing via ubuntu. Jeremy like Windows, but then there is linux environment with a good Deep learning machine.</p>
+<p><strong>Tips for people in Yellow bucket:</strong>
+</p>
+<div class="flash">
+    <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>If you are in yellow, always stop try. First go ahead and watch video fully without try anything in jupyter. Then watch again and follow the course. This is an unusual way but it’s very effective.
+</div>
+I asked <a href="https://twitter.com/waydegilliam/">Wayde Gilliam</a>, a long term fastai community member after the lesson about his process of watching lectures. He was gracious enough to share it with mith
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
+    <strong>Important: </strong>1. Watch the livestream and jot down timestamp to go back to for anything I found interesting in journal A (or just a piece of paper)
+</div>
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
+    <strong>Important: </strong>2. Go back thru video after 2-3 days, hit those spots I noted during the livestream.  Will write detailed notes in another Journal (we’ll call that journal B)
+</div>
+<div class="flash">
+    <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>There’s too much info to digest in real-time so this approach works well and its what I’ve been doing for 4-5 yrs.
+</div>
 <h2 id="Huggingface-spaces">
 <a class="anchor" href="#Huggingface-spaces" aria-hidden="true"><span class="octicon octicon-link"></span></a>Huggingface spaces<a class="anchor-link" href="#Huggingface-spaces"> </a>
 </h2>
-<p>He created a simple fastai model, uploading model in dogs_cat and then export.</p>
+<p>Jeremy pointed to tanishq tutorial on <a href="https://tmabraham.github.io/blog/gradio_hf_spaces_tutorial">Gradio + HuggingFace Spaces</a>.</p>
+<p>Also Jeremy mentioned some good tools which are useful:</p>
+<ul>
+<li>Github Desktop: Hamel who was a employee in github previously, is even using github desktop. Some complicated stuff in git can be solved using this tool. Even knowing terminal is cool.</li>
+<li>WSL: As a datascientist, you spend a lot of time in terminals. Just use ubuntu with windows terminal. Any time Jeremy shows in terminal, he just uses windows terminal.</li>
+</ul>
+<p>Jeremy like Windows due to easiness in streaming and recording capabilities. Yet then there is linux environment with a good Deep learning machine.</p>
 <p>Quick gradio demo
 Catas vs Dog inference</p>
 <p>Jupyter notebooks debugging with magic methods %magic</p>
