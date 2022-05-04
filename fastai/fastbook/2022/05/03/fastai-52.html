@@ -188,10 +188,12 @@ thing which is covered in chapter 2 of Deep Learning book To build grizzly bears
 </ul>
 <p><code>RandomResizedCrop using fastai had some questions from Alex:</code></p>
 <p>Does randomresized crop duplicate the image -- i.e. you get multiple copies and you ensure that all the parts of the image are used in training? or does it just make one crop? Jeremy answered it in video at [32:30].</p>
-<p>Sanyam mentioned that RandomResized crop as a augmentation is very helpful:</p>
-<blockquote>
-<p>Actually this technique is SUPER helpful-in a recent interview, Chris Deotte (4x Grandmaster) shared how these resizing techniques helped them win a solo gold. This was in the petfinder Kaggle competition (2nd run of the comp)</p>
-</blockquote>
+<p>Sanyam mentioned that RandomResized crop as a augmentation is very helpful:
+</p>
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
+    <strong>Important: </strong>Actually this technique is SUPER helpful-in a recent interview, Chris Deotte (4x Grandmaster) shared how these resizing techniques helped them win a solo gold. This was in the petfinder Kaggle competition (2nd run of the comp)
+</div>
 
 </div>
 </div>
@@ -213,18 +215,19 @@ thing which is covered in chapter 2 of Deep Learning book To build grizzly bears
     <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
     <strong>Note: </strong>If you are in yellow, always stop try. First go ahead and watch video fully without try anything in jupyter. Then watch again and follow the course. This is an unusual way but it’s very effective.
 </div>
-I asked <a href="https://twitter.com/waydegilliam/">Wayde Gilliam</a>, a long term fastai community member after the lesson about his process of watching lectures. He was gracious enough to share it with mith
+<p>I asked <a href="https://twitter.com/waydegilliam/">Wayde Gilliam</a>, a long term fastai community member after the lesson about his process of watching lectures. He was gracious enough to share it with mith
+</p>
 <div class="flash flash-warn">
     <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
     <strong>Important: </strong>1. Watch the livestream and jot down timestamp to go back to for anything I found interesting in journal A (or just a piece of paper)
 </div>
 <div class="flash flash-warn">
     <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
-    <strong>Important: </strong>2. Go back thru video after 2-3 days, hit those spots I noted during the livestream.  Will write detailed notes in another Journal (we’ll call that journal B)
+    <strong>Important: </strong>2. Go back through the video after 2-3 days, hit those spots I noted during the livestream.  Will write detailed notes in another Journal (we’ll call that journal B)
 </div>
-<div class="flash">
-    <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-    <strong>Note: </strong>There’s too much info to digest in real-time so this approach works well and its what I’ve been doing for 4-5 yrs.
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
+    <strong>Important: </strong>There’s too much info to digest in real-time so this approach works well and its what I’ve been doing for 4-5 yrs.
 </div>
 <h2 id="Huggingface-spaces">
 <a class="anchor" href="#Huggingface-spaces" aria-hidden="true"><span class="octicon octicon-link"></span></a>Huggingface spaces<a class="anchor-link" href="#Huggingface-spaces"> </a>
@@ -287,8 +290,9 @@ mamba install -c fastchan jupyter nbdev</p>
 <div class=" highlight hl-python"><pre><span></span><span class="n">fetch</span><span class="p">(</span><span class="s1">'https://hf.space/embed/kurianbenoy/audioclassification/+/api/predict/'</span><span class="p">,</span> 
 <span class="p">{</span> <span class="n">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
  <span class="n">body</span><span class="p">:</span> <span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">({</span><span class="s2">"data"</span><span class="p">:[</span> <span class="p">{</span><span class="s2">"data"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span> <span class="s2">"is_example"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"000003.ogg"</span><span class="p">}</span>
-
-<span class="p">]}),</span> <span class="n">headers</span><span class="p">:</span> <span class="p">{</span> <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span> <span class="p">}</span> <span class="p">})</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">();</span> <span class="p">})</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">json_response</span><span class="p">){</span> <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">json_response</span><span class="p">)</span> <span class="p">})</span>
+<span class="p">]}),</span> <span class="n">headers</span><span class="p">:</span> <span class="p">{</span> <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span> <span class="p">}})</span>
+<span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">response</span><span class="p">){</span> <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">();</span> <span class="p">})</span>
+<span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">json_response</span><span class="p">){</span> <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">json_response</span><span class="p">)</span> <span class="p">})</span>
 </pre></div>
 
     </div>
