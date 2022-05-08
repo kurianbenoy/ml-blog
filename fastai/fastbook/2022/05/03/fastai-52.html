@@ -249,22 +249,20 @@ thing which is covered in chapter 2 of Deep Learning book To build grizzly bears
     <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
     <strong>Note: </strong>Jupyter notebooks debugging with magic methods %time, %debug
 </div>
-In fastai for inference, it returns back a tensor. One of issue in gradio tensors is not supported at moment. So we need to convert tensors to float and do prediction.
-<p>Jeremy created a <a href="https://huggingface.co/spaces/jph00/pets">cats vs dogs classifier using spaces</a>. Jeremy's daughter when realised he is building
-such a classifier googled something which is a mix of cat and dog. For that his initial prediction
-was like 50-50% for both cats and dogs. This kind of shows how important the support system 
-acknowledges the work you are doing and it personally touched me. My sister was encouraging me
-to go an all-nighter to complete the <a href="https://huggingface.co/spaces/kurianbenoy/audioclassification">Audio Demo classification spaces, I had build</a>.</p>
+<p>In fastai for inference, it returns back a tensor. One of issue in gradio tensors is not supported at moment. So we need to convert tensors to float and do prediction.</p>
+<p>Jeremy created a <a href="https://huggingface.co/spaces/jph00/pets">cats vs dogs classifier using spaces</a>. 
+His daughter when realised he is building such a classifier googled something which is a mix of cat and dog. For that his initial prediction
+was like 50-50% for both cats and dogs.</p>
+<p>This kind of shows how important the support system around you and how much they acknowledge
+the work you do. This personally touched me. As my sister was encouraging me
+to go an all-nighter to complete the <a href="https://huggingface.co/spaces/kurianbenoy/audioclassification">Music genre classification spaces</a>.</p>
 <p>TODO: Look through Jeremy setup and how he worked with gradio in local [58:00 onwards 1:14:00]</p>
 <h2 id="fastsetup">
 <a class="anchor" href="#fastsetup" aria-hidden="true"><span class="octicon octicon-link"></span></a>fastsetup<a class="anchor-link" href="#fastsetup"> </a>
 </h2>
-<p>Installing python and jupyter-notebooks with proper git and conda setup.
-
+<p>Installing python and jupyter-notebooks with proper git and conda setup.</p>
+<p><a href="https://github.com/fastai/fastsetup">Fastai setup</a>
 </p>
-<center>
-    <div class="jekyll-twitter-plugin"><p>There was a 'Not Found' error fetching URL: 'https://github.com/fastai/fastsetup'</p></div>
-</center>
 <div class="flash flash-warn">
     <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
     <strong>Important: </strong>A big issue in laptops with linux or mac there is a python default version, don’t use that python. As that python version is for your operating system to do it’s stuff. Don’t mess on top of it.
