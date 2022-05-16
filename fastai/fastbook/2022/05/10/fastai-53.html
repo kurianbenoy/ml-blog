@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Practical Deep Learning for Coders Course - Lesson 3 | KurianBenoy</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Practical Deep Learning for Coders Course - Lesson 3" />
+<meta name="author" content="Kurian Benoy" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This blog-post series captures my weekly notes while I attend the fastaiv5 course conducted by University of Queensland with fast.ai. So off to week3 where we learn more how neural networks and say the C* word while learning neural networks …" />
+<meta property="og:description" content="This blog-post series captures my weekly notes while I attend the fastaiv5 course conducted by University of Queensland with fast.ai. So off to week3 where we learn more how neural networks and say the C* word while learning neural networks …" />
+<link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/10/fastai-53.html" />
+<meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/10/fastai-53.html" />
+<meta property="og:site_name" content="KurianBenoy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-05-10T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Practical Deep Learning for Coders Course - Lesson 3" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-05-10T00:00:00-05:00","datePublished":"2022-05-10T00:00:00-05:00","description":"This blog-post series captures my weekly notes while I attend the fastaiv5 course conducted by University of Queensland with fast.ai. So off to week3 where we learn more how neural networks and say the C* word while learning neural networks …","headline":"Practical Deep Learning for Coders Course - Lesson 3","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/10/fastai-53.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/10/fastai-53.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/ml-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kurianbenoy.github.io/ml-blog/feed.xml" title="KurianBenoy" /><link rel="shortcut icon" type="image/x-icon" href="/ml-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/ml-blog/">KurianBenoy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/ml-blog/about/">About Me</a><a class="page-link" href="/ml-blog/search/">Search</a><a class="page-link" href="/ml-blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Practical Deep Learning for Coders Course - Lesson 3</h1><p class="page-description">This blog-post series captures my weekly notes while I attend the <a href='https://itee.uq.edu.au/event/2022/practical-deep-learning-coders-uq-fastai'>fastaiv5 course conducted by University of Queensland with fast.ai</a>. So off to week3 where we learn more how neural networks and say the C* word while learning neural networks ...</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-05-10T00:00:00-05:00" itemprop="datePublished">
+        May 10, 2022
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Kurian Benoy</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/ml-blog/categories/#fastai">fastai</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ml-blog/categories/#fastbook">fastbook</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/kurianbenoy/ml-blog/tree/master/_notebooks/2022-05-10-fastai-53.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/ml-blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/kurianbenoy/ml-blog/blob/master/_notebooks/2022-05-10-fastai-53.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/ml-blog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Lesson-Setup">Lesson Setup </a></li>
+<li class="toc-entry toc-h2"><a href="#Dogs-vs-Cat-notebooks--which-image-models-are-the-best?">Dogs vs Cat notebooks- which image models are the best? </a></li>
+<li class="toc-entry toc-h2"><a href="#Looking-at-how-neural-network-really-work?">Looking at how neural network really work? </a></li>
+<li class="toc-entry toc-h2"><a href="#Intuitive-understanding-with-neural-networks">Intuitive understanding with neural networks </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-05-10-fastai-53.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Lesson-Setup">
+<a class="anchor" href="#Lesson-Setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lesson Setup<a class="anchor-link" href="#Lesson-Setup"> </a>
+</h2>
+<p>There was a minor delay in streaming the lessons today, as today the sessions where being conducted 
+in-person by Jeremy at University of Queensland. There were 130 people watching live in
+youtube, while there was some notable absentees like <a href="twitter.com/bhutanisanyam1/">Sanyam Bhutani</a>.</p>
+<p>Jeremy started the lesson by saying that usually lesson 1 and 2 are easy for everyone, while it's
+usually from lesson 3 things start getting hard. There is also a lesson 0 on how to do fast.ai?
+
+</p>
+<center class="youtube-iframe-wrapper">
+    <iframe width="730" height="315" src="https://www.youtube.com/embed/gGxe2mN3kAg" frameborder="0" allowfullscreen=""></iframe>
+</center>
+
+I had the previously written about <a href="https://kurianbenoy.com/2021-06-16-fastgroup-1/">fastai lesson 0</a>,
+where Jeremy mentioned about <strong>How to do fast.ai lesson</strong>:
+<ol>
+<li>Watching lecture/book (watching the video first without trying anything)</li>
+<li>Running notebook and Experimentation (going through lesson notebooks and experimenting stuff)</li>
+<li>Reproduce Results (try with fastai clean notebook version, see if you are able to understand and do things on your own)</li>
+<li>Working on a different dataset (play with a different dataset, paraticipate in kaggle ...)</li>
+</ol>
+<p>Always studying done with other people is the best activity. So it's great to participate in study
+groups like <a href="https://www.meetup.com/delft-fast-ai-study-group/">Delft-fastai sessions</a>.</p>
+<p>This week, Jeremy showcased various work based on which all got highest number of votes in share-my group section. My work also got featured 🙂.</p>
+<p><img src="https://user-images.githubusercontent.com/24592806/168640845-07859116-bf6b-48c7-af61-5ff8a65dc2fb.png" alt="image"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Dogs-vs-Cat-notebooks--which-image-models-are-the-best?">
+<a class="anchor" href="#Dogs-vs-Cat-notebooks--which-image-models-are-the-best?" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dogs vs Cat notebooks- which image models are the best?<a class="anchor-link" href="#Dogs-vs-Cat-notebooks--which-image-models-are-the-best?"> </a>
+</h2>
+<p>Today Jeremy featured, paperspace gradient platform. He has been using it for 
+paperspace, and it's totally amazing. He got something done by them to update fastbook
+regularly.</p>
+<p><strong>Jeremy says</strong></p>
+<blockquote>
+<p>In lesson2, it's not about taking a particular tool and using in particular platform. There are two important pieces:&gt; 1) Training piece (train.ipynb)&gt; 2) Deployment piece (app.ipynb)</p>
+</blockquote>
+<p>Finding good image models, by <a href="https://www.kaggle.com/code/jhoward/which-image-models-are-best/">baselines results along with inference time</a> will help us choose good architecture. He tried levit_models, didn't work really great
+[25.00] - experimenting with convnext tiny models from timm library. It got really good accuracy with almost 0.05 loss. At the moment there are lot of good architectures, which beats resnets really well. In this case of predicting 37 breeds of dogs we can find categories in datablock using vocab of dataloaders.</p>
+<p>[30:00] get_modules in pytorch and looking into how neural networks work.</p>
+<p>On looking at the notebook, What are these numbers? What are these parameters. How can these number figure out it's a particular dog breed or not? To understand this we need to understand how neural networks work.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Looking-at-how-neural-network-really-work?">
+<a class="anchor" href="#Looking-at-how-neural-network-really-work?" aria-hidden="true"><span class="octicon octicon-link"></span></a>Looking at how neural network really work?<a class="anchor-link" href="#Looking-at-how-neural-network-really-work?"> </a>
+</h2>
+<p><a href="https://www.kaggle.com/code/jhoward/how-does-a-neural-net-really-work">Notebook</a></p>
+<p>Partial application, it's just something in lot of languages. How applying quardartic</p>
+<p>data matching function with data, adding noise with data
+<code>torch.linspace</code> which goes from -2 to +4</p>
+<p>Create a plot quadratic, which helps in interacting. Using @interact
+most simple and common loss functions MSE</p>
+<p>Rerun with MSE. Now add MSE, and see if it get's better or worse. This is a manual process,
+and does he tweak. When we move up, does the loss get's better. Or if it decreases, does loss goes down.</p>
+<p>The derivate is a function, which tells if we increase does it increase or decrease. In pytorch,
+youu can automtically done by pytorch.</p>
+<p>ipythonwidgets using intereact</p>
+<p>return interact. Does mse made by pytorch interact</p>
+<p>Rank 1 tensor, 1 D tensor</p>
+<p>[49:00] onwards follow the calculation again, and try to do it again.
+Now it got and calculated the loss.</p>
+
+<pre><code>With torch.no_grad():</code></pre>
+<p>inner part of machine learning code. This is basic optimizer. This is gradient descent.
+We calculate gradient, and then build models. Not following stuff in lesson [57:00] is not clear for me.</p>
+<p>We learned deep learned. This is like how to draw an owl. This is how deep learning is, just
+go through the course.</p>
+<p><a href="https://pytorch.org/tutorials/">https://pytorch.org/tutorials/</a></p>
+<p>I want to be around 0.001 second. Doing grid search takes a lot of time. Training your good
+models, at the first day is not a big requirement. It's very easy to get inputs &amp; outputs,
+yet getting segmented output is way harder. The important number, learning_rate to calculate parameters.</p>
+<p>After break</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Intuitive-understanding-with-neural-networks">
+<a class="anchor" href="#Intuitive-understanding-with-neural-networks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Intuitive understanding with neural networks<a class="anchor-link" href="#Intuitive-understanding-with-neural-networks"> </a>
+</h2>
+<p>Mathematical trip, we want to do a whole bunch of RELUs. We want lot's of variables.
+Add all the relus together, then use with different bunch of behaviours. 1000s of RELUs</p>
+<p>SIngle operation except last layer, with matrix multiplication.
+Linear algebra, almost all time you need is matrix multiplcator. It's multiplying
+and adding neural networks together. GPUs are so good at this.</p>
+<p><a href="http://matrixmultiplication.xyz/">http://matrixmultiplication.xyz/</a></p>
+<p>fast.ai using excel for matrix multiplication. From [1:28:32]</p>
+<p>Titanic data, about who survived and who didnt'</p>
+<p>Next week, we are going to look into how validation sets and more into metrics. We will be looking into Kaggle notebook on <a href="https://www.kaggle.com/code/jhoward/getting-started-with-nlp-for-absolute-beginners">how to get started with NLP</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="kurianbenoy/ml-blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/ml-blog/fastai/fastbook/2022/05/10/fastai-53.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/ml-blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/ml-blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/ml-blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/kurianbenoy" target="_blank" title="kurianbenoy"><svg class="svg-icon grey"><use xlink:href="/ml-blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/kurianbenoy2" target="_blank" title="kurianbenoy2"><svg class="svg-icon grey"><use xlink:href="/ml-blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
