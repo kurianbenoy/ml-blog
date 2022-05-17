@@ -199,7 +199,11 @@ regularly.
 <div class="flash">
     <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
     <strong>Note: </strong>1. The Training piece by end of which you get a model.pkl file. Once you got that (train.ipynb)
-</div> 2. Then part which takes inputs, spits out output ... this separate step is deploying (app.ipynb)
+</div>
+<div class="flash">
+    <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>2. Then part which takes inputs, spits out output ... this separate step is deploying (app.ipynb)
+</div>
 <p>Finding good image models, by <a href="https://www.kaggle.com/code/jhoward/which-image-models-are-best/">baselines results along with inference time</a> will help us choose good architecture. He tried levit_models, which didn't work really great.</p>
 <p>From [13:52] he experiments with convnext tiny models from timm library. It got really good accuracy with almost 0.05 loss. At the moment for computer vision there are lot of good architectures, which beats resnets really well. In this case for predicting 37 breeds of dogs we can find categories in dataset using vocab of dataloaders in model.</p>
 
