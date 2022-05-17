@@ -166,8 +166,8 @@ usually from lesson 3 things start getting hard. There is also a lesson 0 on how
     <iframe width="730" height="315" src="https://www.youtube.com/embed/gGxe2mN3kAg" frameborder="0" allowfullscreen=""></iframe>
 </center>
 
-I had the previously written about <a href="https://kurianbenoy.com/2021-06-16-fastgroup-1/">fastai lesson 0</a>,
-where Jeremy mentioned about <strong>How to do fast.ai lesson</strong>:
+<p>I had the previously written about <a href="https://kurianbenoy.com/2021-06-16-fastgroup-1/">fastai lesson 0</a>,
+where Jeremy mentioned about <strong>How to do fast.ai lesson</strong> through the following five steps:</p>
 <ol>
 <li>Watching lecture/book (watching the video first without trying anything)</li>
 <li>Running notebook and Experimentation (going through lesson notebooks and experimenting stuff)</li>
@@ -192,12 +192,17 @@ groups like <a href="https://www.meetup.com/delft-fast-ai-study-group/">Delft-fa
 paperspace, and it's totally amazing. He got something done by them to update fastbook
 regularly.</p>
 <blockquote>
-<p>In lesson2 the main things, is not about taking a particular platform and deploying them through javascript websites or online applications. But the key thing is to undestand the concept. There are two pieces:&gt; 1) The Training piece by end of which you get a model.pkl file. Once you got that (train.ipynb)&gt; 2) Then part which takes inputs, spits out output ... this separate step is deploying (app.ipynb)</p>
+<p>In lesson2 the main things, is not about taking a particular platform and deploying them through javascript websites or online applications. But the key thing is to undestand the concept. There are two pieces:1. The Training piece by end of which you get a model.pkl file. Once you got that (train.ipynb)</p>
+<ol>
+<li>Then part which takes inputs, spits out output ... this separate step is deploying (app.ipynb)</li>
+</ol>
 </blockquote>
 <p>Finding good image models, by <a href="https://www.kaggle.com/code/jhoward/which-image-models-are-best/">baselines results along with inference time</a> will help us choose good architecture. He tried levit_models, which didn't work really great.</p>
-<p>From [13:52] he experiments with convnext tiny models from timm library. It got really good accuracy with almost 0.05 loss. At the moment there are lot of good architectures, which beats resnets really well. In this case of predicting 37 breeds of dogs we can find categories in datablock using vocab of dataloaders.</p>
+<p>From [13:52] he experiments with convnext tiny models from timm library. It got really good accuracy with almost 0.05 loss. At the moment for computer vision there are lot of good architectures, which beats resnets really well. In this case for predicting 37 breeds of dogs we can find categories in dataset using vocab of dataloaders in model.</p>
+
+<pre><code>labels = model.dls.vocab</code></pre>
 <p>It's very important to understand what's in a model? Using <code>get_submodule</code> in pytorch we can look at the various neural networks, what is their input and ouput and each layers. [21:24]</p>
-<p>Let's look at a translation models which translates lot of languages from their<a href="https://huggingface.co/Helsinki-NLP/opus-mt-mul-en/tree/main">target form to english</a>.</p>
+<p>Let's explore the architecture of a <a href="https://huggingface.co/Helsinki-NLP/opus-mt-mul-en/tree/main">translation model which translates from their target form to english</a>.</p>
 
 </div>
 </div>
@@ -909,15 +914,21 @@ tensor([-1.6685e+00, -6.0155e-01, -5.9975e-01,  8.4297e-01,  8.5853e-01,
 <h2 id="Looking-at-how-neural-network-really-work?">
 <a class="anchor" href="#Looking-at-how-neural-network-really-work?" aria-hidden="true"><span class="octicon octicon-link"></span></a>Looking at how neural network really work?<a class="anchor-link" href="#Looking-at-how-neural-network-really-work?"> </a>
 </h2>
-<p><a href="https://www.kaggle.com/code/jhoward/how-does-a-neural-net-really-work">Notebook</a></p>
 <p><code>partial</code> in python is something which is usually used in lot of languages. It's just subsituting value of x, in a function which is partial
 filled with already existing function.</p>
-<p>I followed along the notebook, making slight changes in variable names, larger function names, along with changing function value to expirement with
-<a href="https://github.com/kurianbenoy/FastAI-notebooks/blob/d69e1cf9bf04f946ff6e1a9c30977d7ac8eeb9f7/coursev5/neuralnetworks_scratch.ipynb">how does a neural network really work notebook version on my own</a>.</p>
-<p><img src="https://user-images.githubusercontent.com/24592806/168652892-925abcc5-4d4b-43f1-8309-d80b1376fd1e.png" alt="image"></p>
-<blockquote>
-<p>Usually when I expalined this, someone said is like how we draw an owl. In deep learning ..., there is just step 1, computer automatically does the step2 by drawing a beautiful owl.</p>
-</blockquote>
+<p><a href="https://www.kaggle.com/code/jhoward/how-does-a-neural-net-really-work">Jeremy explained with this notebook today</a></p>
+<p>I followed along the notebook, making slight changes in variable names, function names, along with changing defined value to expirement with
+<a href="https://github.com/kurianbenoy/FastAI-notebooks/blob/d69e1cf9bf04f946ff6e1a9c30977d7ac8eeb9f7/coursev5/neuralnetworks_scratch.ipynb">how does a neural network really work notebook version on my own</a>.
+</p>
+<div class="flash">
+    <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>The above trick when working with notebooks is a trick told by <a href="https://twitter.com/strickvl">Alex Strick</a> during delft-fastai sessions.
+</div>
+<img src="https://user-images.githubusercontent.com/24592806/168652892-925abcc5-4d4b-43f1-8309-d80b1376fd1e.png" alt="image">
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
+    <strong>Important: </strong>Usually when I expalined this, one of my students said this is like how we draw an owl. In deep learning ..., there is just step 1, computer automatically does the step2 by drawing a beautiful owl.
+</div>
 
 </div>
 </div>
@@ -928,13 +939,12 @@ filled with already existing function.</p>
 <h2 id="Intuitive-understanding-with-neural-networks">
 <a class="anchor" href="#Intuitive-understanding-with-neural-networks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Intuitive understanding with neural networks<a class="anchor-link" href="#Intuitive-understanding-with-neural-networks"> </a>
 </h2>
-<p>Using RELUs we can tweak our function is such a way to fit the data points. What neural networks, with a bunch of RELU functions we can actually
-optimize to fit any swiggly line or complex things which needn't be always quadratic.</p>
+<p>Using RELUs we can tweak our function in such a way to fit the data. What neural networks, with a bunch of RELU functions does is it helps to optimize in such a way to fit any swiggly line or complex things which needn't be always quadratic.</p>
 <blockquote>
-<p>For Linear algebra, almost all time you need is matrix multiplcation. In schools, you learn linear which says you need tons of experience. Yet it's this operation of matrix multiplication that GPUs are so good at it, and there are even tensor cores for this.</p>
+<p>For Linear algebra, almost all time you need is matrix multiplcation. In schools, you learn linear algrebra as if you need tons of experience to do machine learning. Yet it's this operation of matrix multiplication that GPUs are so good at it, and there are even tensor cores for this.</p>
 </blockquote>
-<p><a href="http://matrixmultiplication.xyz/">http://matrixmultiplication.xyz/</a>
-Using Titanic dataset,see who survived and who didnt' using excel for matrix multiplication. [1:05:00]</p>
+<p><a href="http://matrixmultiplication.xyz/">Refresher on matrix multiplication</a></p>
+<p>Using Titanic dataset,see who survived and who didnt' with excel to understand neural networks. [1:05:00]</p>
 <p>Next week, we are going to look into how validation sets and more into metrics. We will be looking into Kaggle notebook on <a href="https://www.kaggle.com/code/jhoward/getting-started-with-nlp-for-absolute-beginners">how to get started with NLP</a>.</p>
 
 </div>
