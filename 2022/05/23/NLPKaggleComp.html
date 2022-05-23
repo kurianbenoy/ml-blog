@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      6 min read
     
 </span></p>
 
@@ -229,20 +229,6 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Archive:  nlp-getting-started.zip
-replace sample_submission.csv? [y]es, [n]o, [A]ll, [N]one, [r]ename: </pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -650,23 +636,6 @@ replace sample_submission.csv? [y]es, [n]o, [A]ll, [N]one, [r]ename: </pre>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-/opt/conda/lib/python3.8/site-packages/transformers/convert_slow_tokenizer.py:434: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
-  warnings.warn(
-Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
@@ -708,7 +677,9 @@ Special tokens have been added in the vocabulary, make sure the associated word 
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p><div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
@@ -719,7 +690,8 @@ Special tokens have been added in the vocabulary, make sure the associated word 
     </div>
 </div>
 </div>
-
+</p>
+    </details>
 <div class="output_wrapper">
 <div class="output">
 
@@ -812,7 +784,9 @@ Special tokens have been added in the vocabulary, make sure the associated word 
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p><div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
@@ -822,7 +796,8 @@ Special tokens have been added in the vocabulary, make sure the associated word 
     </div>
 </div>
 </div>
-
+</p>
+    </details>
 <div class="output_wrapper">
 <div class="output">
 
@@ -1434,12 +1409,11 @@ Training completed. Do not forget to share your model on huggingface.co/models =
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Just happened a terrible car crash</li>
-<li>Heard about #earthquake is different cities, stay safe everyone.</li>
-<li>There is a forest fire at spot pond, geese are fleeing across the street, I cannot save them all.</li>
-</ol>
-<p>The above are samples from our Test set, looks all disaster tweets which seems to have been predicted correctly. This is my first iteration in which I tried mostly editing from <a href="https://www.kaggle.com/code/jhoward/getting-started-with-nlp-for-absolute-beginners">Jeremy's notebook on getting started with NLP</a>.</p>
+
+<pre><code>1. Just happened a terrible car crash
+2. Heard about #earthquake is different cities, stay safe everyone.
+3. There is a forest fire at spot pond, geese are fleeing across the street, I cannot save them all.</code></pre>
+<p>The above are samples from our Test set, looks all disaster tweets which seems to have been predicted correctly. This is my first iteration in which I tried mostly editing from <a href="https://www.kaggle.com/code/jhoward/getting-started-with-nlp-for-absolute-beginners">Jeremy's notebook on getting started with NLP</a> in about 1 hour.</p>
 
 </div>
 </div>
