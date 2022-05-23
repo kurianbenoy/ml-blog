@@ -7,18 +7,19 @@
 <title>Quickly trying out a NLP model for Kaggle Competition | KurianBenoy</title>
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Quickly trying out a NLP model for Kaggle Competition" />
+<meta name="author" content="Kurian Benoy" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/2022/05/23/NLPKaggleComp.html" />
-<meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/2022/05/23/NLPKaggleComp.html" />
+<link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/23/NLPKaggleComp.html" />
+<meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/23/NLPKaggleComp.html" />
 <meta property="og:site_name" content="KurianBenoy" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-05-23T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Quickly trying out a NLP model for Kaggle Competition" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-05-23T00:00:00-05:00","datePublished":"2022-05-23T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Quickly trying out a NLP model for Kaggle Competition","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/2022/05/23/NLPKaggleComp.html"},"url":"https://kurianbenoy.github.io/ml-blog/2022/05/23/NLPKaggleComp.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-05-23T00:00:00-05:00","datePublished":"2022-05-23T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Quickly trying out a NLP model for Kaggle Competition","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/23/NLPKaggleComp.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/23/NLPKaggleComp.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ml-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kurianbenoy.github.io/ml-blog/feed.xml" title="KurianBenoy" /><link rel="shortcut icon" type="image/x-icon" href="/ml-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -91,14 +92,26 @@ window.onload = wrap_img;
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">Quickly trying out a NLP model for Kaggle Competition</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-05-23T00:00:00-05:00" itemprop="datePublished">
         May 23, 2022
-      </time>
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Kurian Benoy</span></span>
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      7 min read
     
 </span></p>
 
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/ml-blog/categories/#fastai">fastai</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ml-blog/categories/#fastbook">fastbook</a>
+        
+      
+      </p>
     
 
     
@@ -111,28 +124,23 @@ window.onload = wrap_img;
     </a>
 </div>
 
-          <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/kurianbenoy/ml-blog/master?filepath=_notebooks%2F2022-05-23-NLPKaggleComp.ipynb" target="_blank">
-        <img class="notebook-badge-image" src="/ml-blog/assets/badges/binder.svg" alt="Open In Binder"/>
-    </a>
-</div>
-
+          
           <div class="px-2">
     <a href="https://colab.research.google.com/github/kurianbenoy/ml-blog/blob/master/_notebooks/2022-05-23-NLPKaggleComp.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/ml-blog/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
-          <div class="px-2">
-  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fkurianbenoy%2Fml-blog%2Fblob%2Fmaster%2F_notebooks%2F2022-05-23-NLPKaggleComp.ipynb" target="_blank">
-      <img class="notebook-badge-image" src="/ml-blog/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
-  </a>
-</div>
-
+          
         </div>
       </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <!--
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Downloading-Data">Downloading Data </a></li>
+<li class="toc-entry toc-h2"><a href="#Tokenization">Tokenization </a></li>
+<li class="toc-entry toc-h2"><a href="#Validation,-Traning,-Testing">Validation, Traning, Testing </a></li>
+<li class="toc-entry toc-h2"><a href="#Training-Models">Training Models </a></li>
+</ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -141,9 +149,24 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Downloading-Data">Downloading Data<a class="anchor-link" href="#Downloading-Data"> </a></h2>
+<p>This is my attempt to see how well we can build a NLP model for <a href="https://www.kaggle.com/competitions/nlp-getting-started/overview">Natural Language Processing with Disaster Tweets</a>.</p>
+<p>According to competition you are required to :</p>
+<blockquote>
+<p>In this competition, you’re challenged to build a machine learning model that predicts which Tweets are about real disasters and which one’s aren’t. You’ll have access to a dataset of 10,000 tweets that were hand classified. If this is your first time working on an NLP problem, we've created a quick tutorial to get you up and running.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Downloading-Data">
+<a class="anchor" href="#Downloading-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Downloading Data<a class="anchor-link" href="#Downloading-Data"> </a>
+</h2>
 </div>
 </div>
 </div>
@@ -154,7 +177,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">creds</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">creds</span> <span class="o">=</span> <span class="s1">''</span>
 </pre></div>
 
     </div>
@@ -173,7 +196,7 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
-<span class="n">cred_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;~/.kaggle/kaggle.json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">expanduser</span><span class="p">()</span>
+<span class="n">cred_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"~/.kaggle/kaggle.json"</span><span class="p">)</span><span class="o">.</span><span class="n">expanduser</span><span class="p">()</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">cred_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
     <span class="n">cred_path</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">cred_path</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">creds</span><span class="p">)</span>
@@ -259,7 +282,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;train.csv&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"train.csv"</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -360,7 +383,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">"object"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -442,7 +465,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;input&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"input"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"text"</span><span class="p">]</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -542,9 +565,12 @@ window.onload = wrap_img;
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Tokenization">Tokenization<a class="anchor-link" href="#Tokenization"> </a></h2>
+<h2 id="Tokenization">
+<a class="anchor" href="#Tokenization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tokenization<a class="anchor-link" href="#Tokenization"> </a>
+</h2>
 </div>
 </div>
 </div>
@@ -590,7 +616,7 @@ window.onload = wrap_img;
 
 <div class="output_text output_subarea output_execute_result">
 <pre>Dataset({
-    features: [&#39;id&#39;, &#39;keyword&#39;, &#39;location&#39;, &#39;text&#39;, &#39;target&#39;, &#39;input&#39;],
+    features: ['id', 'keyword', 'location', 'text', 'target', 'input'],
     num_rows: 7613
 })</pre>
 </div>
@@ -610,7 +636,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model_nm</span> <span class="o">=</span> <span class="s2">&quot;microsoft/deberta-v3-small&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model_nm</span> <span class="o">=</span> <span class="s2">"microsoft/deberta-v3-small"</span>
 </pre></div>
 
     </div>
@@ -647,7 +673,7 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">tok_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">tokz</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;input&quot;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">tokz</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s2">"input"</span><span class="p">])</span>
 
 
 <span class="n">tok_ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">tok_func</span><span class="p">,</span> <span class="n">batched</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -663,7 +689,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>Parameter &#39;function&#39;=&lt;function tok_func at 0x7f28da60b8b0&gt; of the transform datasets.arrow_dataset.Dataset._map_single couldn&#39;t be hashed properly, a random hash was used instead. Make sure your transforms and parameters are serializable with pickle or dill for the dataset fingerprinting and caching to work. If you reuse this transform, the caching mechanism will consider it to be different from the previous calls and recompute everything. This warning is only showed once. Subsequent hashing failures won&#39;t be showed.
+<pre>Parameter 'function'=&lt;function tok_func at 0x7f28da60b8b0&gt; of the transform datasets.arrow_dataset.Dataset._map_single couldn't be hashed properly, a random hash was used instead. Make sure your transforms and parameters are serializable with pickle or dill for the dataset fingerprinting and caching to work. If you reuse this transform, the caching mechanism will consider it to be different from the previous calls and recompute everything. This warning is only showed once. Subsequent hashing failures won't be showed.
 </pre>
 </div>
 </div>
@@ -679,18 +705,19 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing code_cell rendered">
 <details class="description">
       <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
-        <p><div class="input">
+        <p></p>
+<div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="n">tok_ds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">row</span><span class="p">[</span><span class="s2">&quot;input&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;input_ids&quot;</span><span class="p">]</span>
+<span class="n">row</span><span class="p">[</span><span class="s2">"input"</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">"input_ids"</span><span class="p">]</span>
 </pre></div>
 
     </div>
 </div>
 </div>
-</p>
+
     </details>
 <div class="output_wrapper">
 <div class="output">
@@ -700,7 +727,7 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(&#39;Our Deeds are the Reason of this #earthquake May ALLAH Forgive us all&#39;,
+<pre>('Our Deeds are the Reason of this #earthquake May ALLAH Forgive us all',
  [1,
   581,
   65453,
@@ -735,7 +762,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tok_ds</span> <span class="o">=</span> <span class="n">tok_ds</span><span class="o">.</span><span class="n">rename_columns</span><span class="p">({</span><span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;labels&quot;</span><span class="p">})</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tok_ds</span> <span class="o">=</span> <span class="n">tok_ds</span><span class="o">.</span><span class="n">rename_columns</span><span class="p">({</span><span class="s2">"target"</span><span class="p">:</span> <span class="s2">"labels"</span><span class="p">})</span>
 </pre></div>
 
     </div>
@@ -768,7 +795,7 @@ window.onload = wrap_img;
 
 <div class="output_text output_subarea output_execute_result">
 <pre>Dataset({
-    features: [&#39;id&#39;, &#39;keyword&#39;, &#39;location&#39;, &#39;text&#39;, &#39;labels&#39;, &#39;input&#39;, &#39;input_ids&#39;, &#39;token_type_ids&#39;, &#39;attention_mask&#39;],
+    features: ['id', 'keyword', 'location', 'text', 'labels', 'input', 'input_ids', 'token_type_ids', 'attention_mask'],
     num_rows: 7613
 })</pre>
 </div>
@@ -786,7 +813,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing code_cell rendered">
 <details class="description">
       <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
-        <p><div class="input">
+        <p></p>
+<div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
@@ -796,7 +824,7 @@ window.onload = wrap_img;
     </div>
 </div>
 </div>
-</p>
+
     </details>
 <div class="output_wrapper">
 <div class="output">
@@ -806,13 +834,13 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;id&#39;: 1,
- &#39;keyword&#39;: None,
- &#39;location&#39;: None,
- &#39;text&#39;: &#39;Our Deeds are the Reason of this #earthquake May ALLAH Forgive us all&#39;,
- &#39;labels&#39;: 1,
- &#39;input&#39;: &#39;Our Deeds are the Reason of this #earthquake May ALLAH Forgive us all&#39;,
- &#39;input_ids&#39;: [1,
+<pre>{'id': 1,
+ 'keyword': None,
+ 'location': None,
+ 'text': 'Our Deeds are the Reason of this #earthquake May ALLAH Forgive us all',
+ 'labels': 1,
+ 'input': 'Our Deeds are the Reason of this #earthquake May ALLAH Forgive us all',
+ 'input_ids': [1,
   581,
   65453,
   281,
@@ -829,8 +857,8 @@ window.onload = wrap_img;
   381,
   305,
   2],
- &#39;token_type_ids&#39;: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
- &#39;attention_mask&#39;: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}</pre>
+ 'token_type_ids': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+ 'attention_mask': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}</pre>
 </div>
 
 </div>
@@ -841,9 +869,12 @@ window.onload = wrap_img;
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Validation,-Traning,-Testing">Validation, Traning, Testing<a class="anchor-link" href="#Validation,-Traning,-Testing"> </a></h2>
+<h2 id="Validation,-Traning,-Testing">
+<a class="anchor" href="#Validation,-Traning,-Testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Validation, Traning, Testing<a class="anchor-link" href="#Validation,-Traning,-Testing"> </a>
+</h2>
 </div>
 </div>
 </div>
@@ -854,7 +885,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">eval_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;test.csv&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">eval_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"test.csv"</span><span class="p">)</span>
 <span class="n">eval_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -949,7 +980,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">eval_df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">eval_df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">"object"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1049,11 +1080,11 @@ window.onload = wrap_img;
 <div class="output_text output_subarea output_execute_result">
 <pre>DatasetDict({
     train: Dataset({
-        features: [&#39;id&#39;, &#39;keyword&#39;, &#39;location&#39;, &#39;text&#39;, &#39;labels&#39;, &#39;input&#39;, &#39;input_ids&#39;, &#39;token_type_ids&#39;, &#39;attention_mask&#39;],
+        features: ['id', 'keyword', 'location', 'text', 'labels', 'input', 'input_ids', 'token_type_ids', 'attention_mask'],
         num_rows: 5709
     })
     test: Dataset({
-        features: [&#39;id&#39;, &#39;keyword&#39;, &#39;location&#39;, &#39;text&#39;, &#39;labels&#39;, &#39;input&#39;, &#39;input_ids&#39;, &#39;token_type_ids&#39;, &#39;attention_mask&#39;],
+        features: ['id', 'keyword', 'location', 'text', 'labels', 'input', 'input_ids', 'token_type_ids', 'attention_mask'],
         num_rows: 1904
     })
 })</pre>
@@ -1074,7 +1105,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">eval_df</span><span class="p">[</span><span class="s2">&quot;input&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">eval_df</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">eval_df</span><span class="p">[</span><span class="s2">"input"</span><span class="p">]</span> <span class="o">=</span> <span class="n">eval_df</span><span class="p">[</span><span class="s2">"text"</span><span class="p">]</span>
 <span class="n">eval_ds</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">eval_df</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">tok_func</span><span class="p">,</span> <span class="n">batched</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
@@ -1085,9 +1116,12 @@ window.onload = wrap_img;
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Training-Models">Training Models<a class="anchor-link" href="#Training-Models"> </a></h2>
+<h2 id="Training-Models">
+<a class="anchor" href="#Training-Models" aria-hidden="true"><span class="octicon octicon-link"></span></a>Training Models<a class="anchor-link" href="#Training-Models"> </a>
+</h2>
 </div>
 </div>
 </div>
@@ -1150,7 +1184,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">training_args</span> <span class="o">=</span> <span class="n">TrainingArguments</span><span class="p">(</span><span class="s2">&quot;test-trainer&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">training_args</span> <span class="o">=</span> <span class="n">TrainingArguments</span><span class="p">(</span><span class="s2">"test-trainer"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1180,10 +1214,10 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>Some weights of the model checkpoint at microsoft/deberta-v3-small were not used when initializing DebertaV2ForSequenceClassification: [&#39;lm_predictions.lm_head.bias&#39;, &#39;mask_predictions.dense.bias&#39;, &#39;mask_predictions.LayerNorm.bias&#39;, &#39;mask_predictions.classifier.weight&#39;, &#39;mask_predictions.LayerNorm.weight&#39;, &#39;lm_predictions.lm_head.LayerNorm.weight&#39;, &#39;lm_predictions.lm_head.dense.bias&#39;, &#39;mask_predictions.dense.weight&#39;, &#39;lm_predictions.lm_head.dense.weight&#39;, &#39;lm_predictions.lm_head.LayerNorm.bias&#39;, &#39;mask_predictions.classifier.bias&#39;]
+<pre>Some weights of the model checkpoint at microsoft/deberta-v3-small were not used when initializing DebertaV2ForSequenceClassification: ['lm_predictions.lm_head.bias', 'mask_predictions.dense.bias', 'mask_predictions.LayerNorm.bias', 'mask_predictions.classifier.weight', 'mask_predictions.LayerNorm.weight', 'lm_predictions.lm_head.LayerNorm.weight', 'lm_predictions.lm_head.dense.bias', 'mask_predictions.dense.weight', 'lm_predictions.lm_head.dense.weight', 'lm_predictions.lm_head.LayerNorm.bias', 'mask_predictions.classifier.bias']
 - This IS expected if you are initializing DebertaV2ForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
 - This IS NOT expected if you are initializing DebertaV2ForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
-Some weights of DebertaV2ForSequenceClassification were not initialized from the model checkpoint at microsoft/deberta-v3-small and are newly initialized: [&#39;classifier.weight&#39;, &#39;pooler.dense.weight&#39;, &#39;classifier.bias&#39;, &#39;pooler.dense.bias&#39;]
+Some weights of DebertaV2ForSequenceClassification were not initialized from the model checkpoint at microsoft/deberta-v3-small and are newly initialized: ['classifier.weight', 'pooler.dense.weight', 'classifier.bias', 'pooler.dense.bias']
 You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
 </pre>
 </div>
@@ -1205,8 +1239,8 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span>
     <span class="n">model</span><span class="p">,</span>
     <span class="n">training_args</span><span class="p">,</span>
-    <span class="n">train_dataset</span><span class="o">=</span><span class="n">model_dataset</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">],</span>
-    <span class="n">eval_dataset</span><span class="o">=</span><span class="n">model_dataset</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">],</span>
+    <span class="n">train_dataset</span><span class="o">=</span><span class="n">model_dataset</span><span class="p">[</span><span class="s1">'train'</span><span class="p">],</span>
+    <span class="n">eval_dataset</span><span class="o">=</span><span class="n">model_dataset</span><span class="p">[</span><span class="s1">'test'</span><span class="p">],</span>
     <span class="n">data_collator</span><span class="o">=</span><span class="n">data_collator</span><span class="p">,</span>
     <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokz</span><span class="p">,</span>
 <span class="p">)</span>
@@ -1239,7 +1273,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>The following columns in the training set don&#39;t have a corresponding argument in `DebertaV2ForSequenceClassification.forward` and have been ignored: location, text, id, input, keyword. If location, text, id, input, keyword are not expected by `DebertaV2ForSequenceClassification.forward`,  you can safely ignore this message.
+<pre>The following columns in the training set don't have a corresponding argument in `DebertaV2ForSequenceClassification.forward` and have been ignored: location, text, id, input, keyword. If location, text, id, input, keyword are not expected by `DebertaV2ForSequenceClassification.forward`,  you can safely ignore this message.
 /opt/conda/lib/python3.8/site-packages/transformers/optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
   warnings.warn(
 ***** Running training *****
@@ -1288,11 +1322,13 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
       <td>0.265800</td>
     </tr>
   </tbody>
-</table><p>
+</table>
+<p>
 &lt;/div&gt;
 
 &lt;/div&gt;
 
+</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
@@ -1330,7 +1366,7 @@ Training completed. Do not forget to share your model on huggingface.co/models =
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>TrainOutput(global_step=2142, training_loss=0.3674473464210717, metrics={&#39;train_runtime&#39;: 184.9649, &#39;train_samples_per_second&#39;: 92.596, &#39;train_steps_per_second&#39;: 11.581, &#39;total_flos&#39;: 222000241127892.0, &#39;train_loss&#39;: 0.3674473464210717, &#39;epoch&#39;: 3.0})</pre>
+<pre>TrainOutput(global_step=2142, training_loss=0.3674473464210717, metrics={'train_runtime': 184.9649, 'train_samples_per_second': 92.596, 'train_steps_per_second': 11.581, 'total_flos': 222000241127892.0, 'train_loss': 0.3674473464210717, 'epoch': 3.0})</pre>
 </div>
 
 </div>
@@ -1362,7 +1398,7 @@ Training completed. Do not forget to share your model on huggingface.co/models =
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>The following columns in the test set don&#39;t have a corresponding argument in `DebertaV2ForSequenceClassification.forward` and have been ignored: location, text, id, input, keyword. If location, text, id, input, keyword are not expected by `DebertaV2ForSequenceClassification.forward`,  you can safely ignore this message.
+<pre>The following columns in the test set don't have a corresponding argument in `DebertaV2ForSequenceClassification.forward` and have been ignored: location, text, id, input, keyword. If location, text, id, input, keyword are not expected by `DebertaV2ForSequenceClassification.forward`,  you can safely ignore this message.
 ***** Running Prediction *****
   Num examples = 3263
   Batch size = 8
@@ -1407,7 +1443,8 @@ Training completed. Do not forget to share your model on huggingface.co/models =
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
 <pre><code>1. Just happened a terrible car crash
@@ -1421,10 +1458,23 @@ Training completed. Do not forget to share your model on huggingface.co/models =
 &lt;/div&gt;
  
 
-</p></div></div></div></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
-  </div><a class="u-url" href="/ml-blog/2022/05/23/NLPKaggleComp.html" hidden></a>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="kurianbenoy/ml-blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/ml-blog/fastai/fastbook/2022/05/23/NLPKaggleComp.html" hidden></a>
 </article>
 
       </div>
