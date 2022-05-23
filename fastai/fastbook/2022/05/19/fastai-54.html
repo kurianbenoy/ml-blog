@@ -98,7 +98,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      8 min read
     
 </span></p>
 
@@ -145,8 +145,13 @@ window.onload = wrap_img;
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#Fundamentals-libraries-in-ML">Fundamentals libraries in ML </a></li>
+<li class="toc-entry toc-h2"><a href="#NLP-notebook-tokenization">NLP notebook tokenization </a></li>
 <li class="toc-entry toc-h2"><a href="#Test,-Validation-Dataset">Test, Validation Dataset </a></li>
-<li class="toc-entry toc-h2"><a href="#Understanding-metrics">Understanding metrics </a></li>
+<li class="toc-entry toc-h2"><a href="#Understanding-metrics">Understanding metrics </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Why-metrics-is-different-from-loss?">Why metrics is different from loss? </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#Pearson-Coefficient">Pearson Coefficient </a></li>
 </ul><!--
 #################################################
@@ -223,8 +228,11 @@ called <code>transformers</code>.
     <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
     <strong>Important: </strong>It looks pretty cool, if you build the state of art stuff. Yet if you don’t know fundamentals, you will encounter trouble. So i will recommend you to get started by first complete reading the <a href="https://github.com/fastai/fastbook">Deep Learning for Coders book</a>, then the Macinskey book on Python for Data Analysis, 3E which is free <a href="https://wesmckinney.com/book/">completely online</a>.
 </div>
-## NLP notebook tokenization</li>
+</li>
 </ol>
+<h2 id="NLP-notebook-tokenization">
+<a class="anchor" href="#NLP-notebook-tokenization" aria-hidden="true"><span class="octicon octicon-link"></span></a>NLP notebook tokenization<a class="anchor-link" href="#NLP-notebook-tokenization"> </a>
+</h2>
 <p><a href="https://www.kaggle.com/code/jhoward/getting-started-with-nlp-for-absolute-beginners">Getting started with NLP for absolute beginners</a></p>
 <p>It's been only a year or two since NLP has been getting good results, for computer vision things
 are being optimistic for a long time now.</p>
@@ -232,11 +240,11 @@ are being optimistic for a long time now.</p>
 <li>Tokenization, is converting the text blurbs into a set of small tokens.</li>
 <li>Numericalization is the process of converting these tokens to numbers for models to train</li>
 </ul>
-<p>We used deberta-v3 as some similar models are always found to give good results. Yet there are lot of pretrained models available in public which can just found by searching like Patent for patent models in <a href="https://huggingface.co/models">Huggingface models hub</a>.
+<p>We used <code>deberta-v3</code> as base model as some models are always found to give good results. Yet there are lot of pretrained models available in public which can just found by searching like Patent for patent models in <a href="https://huggingface.co/models">Huggingface models hub</a>.
 </p>
-<div class="flash flash-warn">
-    <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
-    <strong>Important: </strong>For under 2000 words use transformers approach, for more than 2000 words per sequence it would a good idea to try ULMFiT also along with transformers.
+<div class="flash">
+    <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>(Jeremy) For under 2000 words use transformers approach, for more than 2000 words per sequence it would a good idea to try ULMFiT also along with transformers.
 </div>
 <h2 id="Test,-Validation-Dataset">
 <a class="anchor" href="#Test,-Validation-Dataset" aria-hidden="true"><span class="octicon octicon-link"></span></a>Test, Validation Dataset<a class="anchor-link" href="#Test,-Validation-Dataset"> </a>
@@ -245,19 +253,23 @@ are being optimistic for a long time now.</p>
 <ol>
 <li>Test set</li>
 <li>Validation set</li>
-<li>Training set<blockquote>
-<p>Kaggle competitions are really a good way to create a good validation set... Beginners generally tend to overfit ... In real world outside of kaggle you often won't know it's overfit. You just destroy value for organizations silently... You really don't get it untill you screw it up a few times.</p>
-</blockquote>
+<li>Training set
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
+    <strong>Important: </strong>(Jeremy) Kaggle competitions are really a good way to create a good validation set... Beginners generally tend to overfit ... In real world outside of kaggle you often won’t know it’s overfit. You just destroy value for organizations silently... You really don’t get it untill you screw it up a few times.
+</div>
+<a href="https://www.fast.ai/2017/11/13/validation-sets/">How (and why) to create a good validation set</a>
 </li>
 </ol>
-<p><a href="https://www.fast.ai/2017/11/13/validation-sets/">How (and why) to create a good validation set</a>
-Test Set is a separate model which is not used for ML model for learning. It's kept as separate hold out dataset for further testing.</p>
+<p><code>Test Set</code> is a separate data which is not used by ML model for learning. It's kept as separate hold out dataset for further testing.</p>
 <h2 id="Understanding-metrics">
 <a class="anchor" href="#Understanding-metrics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Understanding metrics<a class="anchor-link" href="#Understanding-metrics"> </a>
 </h2>
 <p>With the validation set, we are measuring some metrics like accuracy which tell how good our ML model is. In Kaggle for every competition there is a metric available to optimize based on.</p>
-<p><strong>Why metrics is different from loss?</strong>
-</p>
+<h3 id="Why-metrics-is-different-from-loss?">
+<a class="anchor" href="#Why-metrics-is-different-from-loss?" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why metrics is different from loss?<a class="anchor-link" href="#Why-metrics-is-different-from-loss?"> </a>
+</h3>
+<p></p>
 <div class="flash flash-warn">
     <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
     <strong>Important: </strong>If you were taking something like accuracy as loss function for classifying cats vs dogs. Then it may go on finding gradient and optimizing, yet at some point if inacurate cats are still labelled as dogs by models. Evaluating with accuracy as loss functions will be same. We can’t proceed further with such a loss function, that’s why we use functions like MSE for loss usually.
@@ -267,10 +279,13 @@ Metrics in real world is ofcourse a big issue, so with one ML model which claims
 <h2 id="Pearson-Coefficient">
 <a class="anchor" href="#Pearson-Coefficient" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pearson Coefficient<a class="anchor-link" href="#Pearson-Coefficient"> </a>
 </h2>
-<p>Understanding metrics is very key, especially in Kaggle competitons.</p>
-<p>According to Kaggle competition page: "Submissions are evaluated on the Pearson correlation coefficient between the predicted and actual similarity scores."</p>
-<p>This coefficient is usually abbreviated using the single letter r. It is the most widely used measure of the degree of relationship between two variables. r can vary between -1, which means perfect inverse correlation, and +1, which means perfect positive correlation.</p>
-<p>Jeremy's way of teaching this concept was explaining with a code and by showing us how to get intution with code</p>
+<p>Understanding metrics is very key, especially in Kaggle competitons. According to this Kaggle competition page: "Submissions are evaluated on the Pearson correlation coefficient between the predicted and actual similarity scores."
+</p>
+<div class="flash">
+    <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>"This coefficient is usually abbreviated using the single letter r. It is the most widely used measure of the degree of relationship between two variables. r can vary between -1, which means perfect inverse correlation, and +1, which means perfect positive correlation. "
+</div>
+Jeremy's way of teaching this concept was explaining with a code and by showing us how to get intution with code
 
 </div>
 </div>
@@ -539,8 +554,12 @@ Metrics in real world is ofcourse a big issue, so with one ML model which claims
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>When I ran through this code I was thinking about how [0,1] element in this corelation matrix is 0.12, when value of relation_matrix returns something as 0.11658535. I asked this simple doubt in the forum and after a while, I got answer from one of the <a href="https://forums.fast.ai/u/n-e-w/summary">course TAs Nick(n-e-w)</a>.</p>
-<p><img src="https://user-images.githubusercontent.com/24592806/169845219-4915b78d-8be4-4972-bd37-40476d1b6f4c.png" alt="image"></p>
-<p>This is one of the best things IMO about taking the course live, rather than attending online. There is lot more activity, and you even get some of your questions answered by lot of experts and even Jeremy too.</p>
+<p><img src="https://user-images.githubusercontent.com/24592806/169845219-4915b78d-8be4-4972-bd37-40476d1b6f4c.png" alt="image">
+</p>
+<div class="flash">
+    <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>This is one of the best things IMO about taking the course live, rather than attending online. There is lot more activity, and you even get some of your questions answered by lot of experts and even Jeremy too.
+</div>
 
 </div>
 </div>
@@ -634,7 +653,8 @@ Metrics in real world is ofcourse a big issue, so with one ML model which claims
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If you look at two graphs, once we removed the Average room &lt;15. We notice a huge difference in r value which denotes the pearson coefficent. Thus we got an intutive feeling of what the metrics is doing, and how it's being affected by outliers.Even if you make small error in some of predictions you will notice a hugh bump in leaderboard which affects your position, as pearson correlation penalizes heavily.</p>
+<p>If you look at two graphs, once we removed the Average room &lt;15. We notice a huge difference in r value which denotes the <code>pearson coefficent</code> are sensitive to outliers. Thus we got an intutive feeling of what the metrics is doing, and how it's being affected by outliers. Even if you make small error in some of predictions you will notice a hugh bump in leaderboard which affects your position, as pearson correlation penalizes heavily for wrong predictions.</p>
+<p>Next week, will be the fifth lesson and the last one for month of May. The course will have resume again during month of June when monsoon season delights us here in Kerala with rain and everyone else with more fastai learnings.</p>
 
 </div>
 </div>
