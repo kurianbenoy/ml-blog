@@ -11,15 +11,15 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/fastai/terminal/python/2022/05/28/fastai-walthrus1.html" />
-<meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/fastai/terminal/python/2022/05/28/fastai-walthrus1.html" />
+<link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/fastaicourse/terminal/python/2022/05/28/fastai-walthrus1.html" />
+<meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/fastaicourse/terminal/python/2022/05/28/fastai-walthrus1.html" />
 <meta property="og:site_name" content="KurianBenoy" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-05-28T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Introduction to linux Terminal and Installing Python Packages &amp; Libraries for Data Sciene" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-05-28T00:00:00-05:00","datePublished":"2022-05-28T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Introduction to linux Terminal and Installing Python Packages &amp; Libraries for Data Sciene","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastai/terminal/python/2022/05/28/fastai-walthrus1.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastai/terminal/python/2022/05/28/fastai-walthrus1.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-05-28T00:00:00-05:00","datePublished":"2022-05-28T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Introduction to linux Terminal and Installing Python Packages &amp; Libraries for Data Sciene","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastaicourse/terminal/python/2022/05/28/fastai-walthrus1.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastaicourse/terminal/python/2022/05/28/fastai-walthrus1.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ml-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kurianbenoy.github.io/ml-blog/feed.xml" title="KurianBenoy" /><link rel="shortcut icon" type="image/x-icon" href="/ml-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -105,7 +105,7 @@ window.onload = wrap_img;
     
       <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
       
-        <a class="category-tags-link" href="/ml-blog/categories/#fastai">fastai</a>
+        <a class="category-tags-link" href="/ml-blog/categories/#fastaicourse">fastaicourse</a>
         &nbsp;
       
         <a class="category-tags-link" href="/ml-blog/categories/#terminal">terminal</a>
@@ -140,6 +140,7 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#Introduction">Introduction </a></li>
+<li class="toc-entry toc-h2"><a href="#What-is-a-terminal?-What-is-a-shell?-Why-use-them?">What is a terminal? What is a shell? Why use them? </a></li>
 <li class="toc-entry toc-h2"><a href="#Installing-Python-Packages">Installing Python Packages </a></li>
 <li class="toc-entry toc-h2"><a href="#Using-fastsetup">Using fastsetup </a></li>
 <li class="toc-entry toc-h2"><a href="#Uninstalling-packages">Uninstalling packages </a></li>
@@ -161,7 +162,9 @@ window.onload = wrap_img;
 </h2>
 <p><a href="https://forums.fast.ai/u/jeremy">Jeremy</a> has been conducting these official course walk-thrus which start on May 27, 22 for students of fastaiv5 course. I personally felt some of these things were very useful to me personally, and I may use it again and again. So thought of writing it down.</p>
 <p>You can install terminal in Windows by downloading <a href="https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=en-us&amp;gl=US">Windows terminal</a>. In case of linux, just type terminal and you will notice it will come with a terminal. In MacOS, you can just open terminal.</p>
-<p>What is a terminal? What is a shell? Why use them?</p>
+<h2 id="What-is-a-terminal?-What-is-a-shell?-Why-use-them?">
+<a class="anchor" href="#What-is-a-terminal?-What-is-a-shell?-Why-use-them?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is a terminal? What is a shell? Why use them?<a class="anchor-link" href="#What-is-a-terminal?-What-is-a-shell?-Why-use-them?"> </a>
+</h2>
 <p>A terminal is a program which can display console window to run program. Yet thing inside is not stricly a terminal. Usually in a terminal there can be multiple shells, which can have different colours, shells etc. In a windows terminal it can start no of shells like PowerShell, Command Prompt, Ubuntu etc. We use both interchangebly which is ok.</p>
 <p>In Windows, Jeremy recommends to use <a href="https://docs.microsoft.com/en-us/windows/wsl/install">WSL</a>. It's a good idea to change the default shell from <code>Power shell to Ubuntu</code> for easy usage. Also learn some shortcuts like:</p>
 <p><code>Ctrl</code>+<code>Shift</code>+<code>1</code> - Open shell set for default profile
@@ -233,7 +236,7 @@ Let's install first the python packages with mamba aka. faster version of conda.
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/ml-blog/fastai/terminal/python/2022/05/28/fastai-walthrus1.html" hidden></a>
+</script><a class="u-url" href="/ml-blog/fastaicourse/terminal/python/2022/05/28/fastai-walthrus1.html" hidden></a>
 </article>
 
       </div>

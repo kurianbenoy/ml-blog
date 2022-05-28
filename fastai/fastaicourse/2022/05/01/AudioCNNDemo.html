@@ -11,8 +11,8 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="A side-project done while attending Practical Deep Learning for Coders Course" />
 <meta property="og:description" content="A side-project done while attending Practical Deep Learning for Coders Course" />
-<link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/01/AudioCNNDemo.html" />
-<meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/01/AudioCNNDemo.html" />
+<link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/fastai/fastaicourse/2022/05/01/AudioCNNDemo.html" />
+<meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/fastai/fastaicourse/2022/05/01/AudioCNNDemo.html" />
 <meta property="og:site_name" content="KurianBenoy" />
 <meta property="og:image" content="https://kurianbenoy.github.io/ml-blog/images/music.png" />
 <meta property="og:type" content="article" />
@@ -21,7 +21,7 @@
 <meta property="twitter:image" content="https://kurianbenoy.github.io/ml-blog/images/music.png" />
 <meta property="twitter:title" content="Music genre classifier using fast.ai" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-05-01T00:00:00-05:00","datePublished":"2022-05-01T00:00:00-05:00","description":"A side-project done while attending Practical Deep Learning for Coders Course","headline":"Music genre classifier using fast.ai","image":"https://kurianbenoy.github.io/ml-blog/images/music.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/01/AudioCNNDemo.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/01/AudioCNNDemo.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-05-01T00:00:00-05:00","datePublished":"2022-05-01T00:00:00-05:00","description":"A side-project done while attending Practical Deep Learning for Coders Course","headline":"Music genre classifier using fast.ai","image":"https://kurianbenoy.github.io/ml-blog/images/music.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastai/fastaicourse/2022/05/01/AudioCNNDemo.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastai/fastaicourse/2022/05/01/AudioCNNDemo.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ml-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kurianbenoy.github.io/ml-blog/feed.xml" title="KurianBenoy" /><link rel="shortcut icon" type="image/x-icon" href="/ml-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -116,7 +116,7 @@ window.onload = wrap_img;
         <a class="category-tags-link" href="/ml-blog/categories/#fastai">fastai</a>
          
       
-        <a class="category-tags-link" href="/ml-blog/categories/#fastbook">fastbook</a>
+        <a class="category-tags-link" href="/ml-blog/categories/#fastaicourse">fastaicourse</a>
         
       
       </p>
@@ -149,6 +149,7 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Introduction">Introduction </a></li>
 <li class="toc-entry toc-h2"><a href="#Downloading-packages-and-importing-libraries">Downloading packages and importing libraries </a></li>
 <li class="toc-entry toc-h2"><a href="#Collecting-Data">Collecting Data </a></li>
 <li class="toc-entry toc-h2"><a href="#Quick-EDA-and-Data-Cleaning">Quick EDA and Data Cleaning </a></li>
@@ -171,6 +172,10 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Introduction">
+<a class="anchor" href="#Introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction<a class="anchor-link" href="#Introduction"> </a>
+</h2>
+<p>UPDATE - This project got featured in some of the cool project Jeremy Howard shared in lesson3 of fastaiv5 course.</p>
 <p>During first lesson of Practical Deep Learning for Coders course, Jeremy had mentioned how using simple 
 computer vision model we can build even a model to classify audio with image classification model itself.</p>
 <p>Recently Kaggle grandmaster <a href="https://www.kaggle.com/robikscube">Rob Mulla</a> conducted a challenge to classify music according to what genre it was. At stakes there was a RTX 3080 Ti GPU. Let's look how we can classify music genres using a simple computer vision model which was taught in the first lesson of fast.ai.</p>
@@ -1746,7 +1751,7 @@ Dien Hoa Truong has shared some techniques which he learned during Kaggle compet
   </div>
 <!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js" repo="kurianbenoy/ml-blog" issue-term="title" label="blogpost-comment" theme="github-light" crossorigin="anonymous" async>
-</script><a class="u-url" href="/ml-blog/fastai/fastbook/2022/05/01/AudioCNNDemo.html" hidden></a>
+</script><a class="u-url" href="/ml-blog/fastai/fastaicourse/2022/05/01/AudioCNNDemo.html" hidden></a>
 </article>
 
       </div>

@@ -11,15 +11,15 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="This blog-post series captures my weekly notes while I attend the fastaiv5 course conducted by University of Queensland with fast.ai. So off to week2 where we learn about productionizing ML models and how to get good accuracy." />
 <meta property="og:description" content="This blog-post series captures my weekly notes while I attend the fastaiv5 course conducted by University of Queensland with fast.ai. So off to week2 where we learn about productionizing ML models and how to get good accuracy." />
-<link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/03/fastai-52.html" />
-<meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/03/fastai-52.html" />
+<link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/fastai/fastaicourse/2022/05/03/fastai-52.html" />
+<meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/fastai/fastaicourse/2022/05/03/fastai-52.html" />
 <meta property="og:site_name" content="KurianBenoy" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-05-03T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Practical Deep Learning for Coders Course - Lesson 2" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-05-03T00:00:00-05:00","datePublished":"2022-05-03T00:00:00-05:00","description":"This blog-post series captures my weekly notes while I attend the fastaiv5 course conducted by University of Queensland with fast.ai. So off to week2 where we learn about productionizing ML models and how to get good accuracy.","headline":"Practical Deep Learning for Coders Course - Lesson 2","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/03/fastai-52.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastai/fastbook/2022/05/03/fastai-52.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-05-03T00:00:00-05:00","datePublished":"2022-05-03T00:00:00-05:00","description":"This blog-post series captures my weekly notes while I attend the fastaiv5 course conducted by University of Queensland with fast.ai. So off to week2 where we learn about productionizing ML models and how to get good accuracy.","headline":"Practical Deep Learning for Coders Course - Lesson 2","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastai/fastaicourse/2022/05/03/fastai-52.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastai/fastaicourse/2022/05/03/fastai-52.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ml-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kurianbenoy.github.io/ml-blog/feed.xml" title="KurianBenoy" /><link rel="shortcut icon" type="image/x-icon" href="/ml-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -108,7 +108,7 @@ window.onload = wrap_img;
         <a class="category-tags-link" href="/ml-blog/categories/#fastai">fastai</a>
         &nbsp;
       
-        <a class="category-tags-link" href="/ml-blog/categories/#fastbook">fastbook</a>
+        <a class="category-tags-link" href="/ml-blog/categories/#fastaicourse">fastaicourse</a>
         
       
       </p>
@@ -130,12 +130,7 @@ window.onload = wrap_img;
         <img class="notebook-badge-image" src="/ml-blog/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
-          <div class="px-2">
-  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fkurianbenoy%2Fml-blog%2Fblob%2Fmaster%2F_notebooks%2F2022-05-03-fastai-52.ipynb" target="_blank">
-      <img class="notebook-badge-image" src="/ml-blog/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
-  </a>
-</div>
-
+          
         </div>
       </header>
 
@@ -300,7 +295,7 @@ mamba install -c fastchan jupyter nbdev</code></pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">fetch</span><span class="p">(</span><span class="s1">'https://hf.space/embed/kurianbenoy/audioclassification/+/api/predict/'</span><span class="p">,</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fetch</span><span class="p">(</span><span class="s1">'https://hf.space/embed/kurianbenoy/audioclassification/+/api/predict/'</span><span class="p">,</span> 
 <span class="p">{</span> <span class="n">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
  <span class="n">body</span><span class="p">:</span> <span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">({</span><span class="s2">"data"</span><span class="p">:[</span> <span class="p">{</span><span class="s2">"data"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span> <span class="s2">"is_example"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"000003.ogg"</span><span class="p">}</span>
 <span class="p">]}),</span> <span class="n">headers</span><span class="p">:</span> <span class="p">{</span> <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span> <span class="p">}})</span>
@@ -342,7 +337,7 @@ add three dashes. The world of javascript apps, he build this cool apps.
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/ml-blog/fastai/fastbook/2022/05/03/fastai-52.html" hidden></a>
+</script><a class="u-url" href="/ml-blog/fastai/fastaicourse/2022/05/03/fastai-52.html" hidden></a>
 </article>
 
       </div>
