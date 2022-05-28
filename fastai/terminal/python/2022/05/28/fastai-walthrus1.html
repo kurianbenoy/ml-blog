@@ -7,18 +7,19 @@
 <title>Introduction to linux Terminal and Installing Python Packages &amp; Libraries for Data Sciene | KurianBenoy</title>
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Introduction to linux Terminal and Installing Python Packages &amp; Libraries for Data Sciene" />
+<meta name="author" content="Kurian Benoy" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/2022/05/28/fastai-walthrus1.html" />
-<meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/2022/05/28/fastai-walthrus1.html" />
+<link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/fastai/terminal/python/2022/05/28/fastai-walthrus1.html" />
+<meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/fastai/terminal/python/2022/05/28/fastai-walthrus1.html" />
 <meta property="og:site_name" content="KurianBenoy" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-05-28T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Introduction to linux Terminal and Installing Python Packages &amp; Libraries for Data Sciene" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-05-28T00:00:00-05:00","datePublished":"2022-05-28T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Introduction to linux Terminal and Installing Python Packages &amp; Libraries for Data Sciene","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/2022/05/28/fastai-walthrus1.html"},"url":"https://kurianbenoy.github.io/ml-blog/2022/05/28/fastai-walthrus1.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-05-28T00:00:00-05:00","datePublished":"2022-05-28T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Introduction to linux Terminal and Installing Python Packages &amp; Libraries for Data Sciene","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastai/terminal/python/2022/05/28/fastai-walthrus1.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastai/terminal/python/2022/05/28/fastai-walthrus1.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ml-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kurianbenoy.github.io/ml-blog/feed.xml" title="KurianBenoy" /><link rel="shortcut icon" type="image/x-icon" href="/ml-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -91,7 +92,9 @@ window.onload = wrap_img;
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">Introduction to linux Terminal and Installing Python Packages &amp; Libraries for Data Sciene</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-05-28T00:00:00-05:00" itemprop="datePublished">
         May 28, 2022
-      </time>
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Kurian Benoy</span></span>
        • <span class="read-time" title="Estimated read time">
     
     
@@ -99,6 +102,19 @@ window.onload = wrap_img;
     
 </span></p>
 
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/ml-blog/categories/#fastai">fastai</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ml-blog/categories/#terminal">terminal</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ml-blog/categories/#python">python</a>
+        
+      
+      </p>
     
 
     
@@ -111,28 +127,19 @@ window.onload = wrap_img;
     </a>
 </div>
 
-          <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/kurianbenoy/ml-blog/master?filepath=_notebooks%2F2022-05-28-fastai-walthrus1.ipynb" target="_blank">
-        <img class="notebook-badge-image" src="/ml-blog/assets/badges/binder.svg" alt="Open In Binder"/>
-    </a>
-</div>
-
+          
           <div class="px-2">
     <a href="https://colab.research.google.com/github/kurianbenoy/ml-blog/blob/master/_notebooks/2022-05-28-fastai-walthrus1.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/ml-blog/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
-          <div class="px-2">
-  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fkurianbenoy%2Fml-blog%2Fblob%2Fmaster%2F_notebooks%2F2022-05-28-fastai-walthrus1.ipynb" target="_blank">
-      <img class="notebook-badge-image" src="/ml-blog/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
-  </a>
-</div>
-
+          
         </div>
       </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <!--
+    <ul id="toc" class="section-nav">
+</ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -145,7 +152,15 @@ window.onload = wrap_img;
 
 
 
-  </div><a class="u-url" href="/ml-blog/2022/05/28/fastai-walthrus1.html" hidden></a>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="kurianbenoy/ml-blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/ml-blog/fastai/terminal/python/2022/05/28/fastai-walthrus1.html" hidden></a>
 </article>
 
       </div>
