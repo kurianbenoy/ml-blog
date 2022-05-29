@@ -155,12 +155,10 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h3"><a href="#Installation-with-mamba">Installation with mamba </a></li>
 <li class="toc-entry toc-h3"><a href="#🐛-Uninstalling-mamba/conda">🐛 Uninstalling mamba/conda </a></li>
-<li class="toc-entry toc-h3"><a href="#Using-fastsetup">Using fastsetup </a>
-<ul>
-<li class="toc-entry toc-h4"><a href="#❓-I-asked-to-Jeremy-about:-which-version-of-python-is-using-and-how-to-use-for-a-different-python-version">❓ I asked to Jeremy about: which version of python is using and how to use for a different python version </a></li>
-</ul>
-</li>
+<li class="toc-entry toc-h3"><a href="#Using-fastsetup">Using fastsetup </a></li>
+<li class="toc-entry toc-h3"><a href="#My-question-to-Jeremy">My question to Jeremy </a></li>
 <li class="toc-entry toc-h3"><a href="#Installing-datascience-packages---pytorch-and-jupyter">Installing datascience packages - pytorch and jupyter </a></li>
+<li class="toc-entry toc-h3"><a href="#Installing-packages-with-fastchan">Installing packages with fastchan </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#Conclusion">Conclusion </a></li>
@@ -314,9 +312,10 @@ blog  downloads  mambaforge
 <pre><code>source setup-conda.sh
 . ~/.bashrc
 conda install -yq mamba</code></pre>
-<h4 id="❓-I-asked-to-Jeremy-about:-which-version-of-python-is-using-and-how-to-use-for-a-different-python-version">
-<a class="anchor" href="#%E2%9D%93-I-asked-to-Jeremy-about:-which-version-of-python-is-using-and-how-to-use-for-a-different-python-version" aria-hidden="true"><span class="octicon octicon-link"></span></a>❓ I asked to Jeremy about: which version of python is using and how to use for a different python version<a class="anchor-link" href="#%E2%9D%93-I-asked-to-Jeremy-about:-which-version-of-python-is-using-and-how-to-use-for-a-different-python-version"> </a>
-</h4>
+<h3 id="My-question-to-Jeremy">
+<a class="anchor" href="#My-question-to-Jeremy" aria-hidden="true"><span class="octicon octicon-link"></span></a>My question to Jeremy<a class="anchor-link" href="#My-question-to-Jeremy"> </a>
+</h3>
+<p>❓I asked to Jeremy about: which version of python is using and how to use for a different python version</p>
 <p>Jeremy on checking Mambaforge repository, realised that python version which we are using now is python 3.9. It's always a good idea to know, which
 kind of python versions are near their end of life and <a href="https://endoflife.date/python">can be here</a>. At the time of writing any version above python 3.7 to python3.10 is recommended to use. Yet according to Jeremy, he usually prefers to use latest python only 1 year after it's released, but fastai do support the latest version.</p>
 <p><a href="https://twitter.com/radekosmulski/">Radek</a> who is a engineer at Nvidia, told he usually prefer mamba because with just one line of code you can switch to any python version you want. Afer the session in forums, Radek shared how to do this as shown in below screenshot.</p>
@@ -347,6 +346,13 @@ kind of python versions are near their end of life and <a href="https://endoflif
 <pre><code>jupyter lab --no-browser</code></pre>
 <p>This opens up jupyterlab in localhost:8888</p>
 <p><img src="https://user-images.githubusercontent.com/24592806/170855155-67d3167c-e635-40a6-a0cb-bd12d6d81d0d.png" alt="image"></p>
+<h3 id="Installing-packages-with-fastchan">
+<a class="anchor" href="#Installing-packages-with-fastchan" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing packages with fastchan<a class="anchor-link" href="#Installing-packages-with-fastchan"> </a>
+</h3>
+<p>Even though Jeremy didn't cover this topic during walk-thrus. I came to know about <code>fastchan</code> when I wanted to install <code>pytorch and huggingface transformers</code> in a gpu based system. What is fastchan and the problem it solves is covered by <a href="https://wandb.ai/wandb_fc/pytorch-image-models/reports/A-faster-way-to-get-working-and-up-to-date-conda-environments-using-fastchan---Vmlldzo2ODIzNzA">detailed blogpost</a> by the <a href="https://wandb.ai/aarora">Aman Arora</a>.</p>
+<p>To install both <code>pytorch and huggingface transformers</code> in a GPU, I used the following command:</p>
+
+<pre><code>mamba install pytorch transformers cudatoolkit=11.4 -c fastchan</code></pre>
 
 </div>
 </div>
