@@ -143,7 +143,7 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#Introduction">Introduction </a></li>
-<li class="toc-entry toc-h2"><a href="#What's-terminal,-how-to-work-with-it?">What&#39;s terminal, how to work with it? </a>
+<li class="toc-entry toc-h2"><a href="#🚖-What's-terminal,-how-to-work-with-it?">🚖 What&#39;s terminal, how to work with it? </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Terminal-vs-Shell">Terminal vs Shell </a></li>
 <li class="toc-entry toc-h3"><a href="#Installing-Terminal-&-Shell">Installing Terminal &amp; Shell </a></li>
@@ -151,10 +151,10 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#Keyboard-shortcuts">Keyboard shortcuts </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#How-to-install-Python-Packages-for-datascience?">How to install Python Packages for datascience? </a>
+<li class="toc-entry toc-h2"><a href="#🔰-How-to-install-Python-Packages-for-datascience">🔰 How to install Python Packages for datascience </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Installation-with-mamba">Installation with mamba </a></li>
-<li class="toc-entry toc-h3"><a href="#Uninstalling-mamba/conda">Uninstalling mamba/conda </a></li>
+<li class="toc-entry toc-h3"><a href="#🐛-Uninstalling-mamba/conda">🐛 Uninstalling mamba/conda </a></li>
 <li class="toc-entry toc-h3"><a href="#Using-fastsetup">Using fastsetup </a></li>
 <li class="toc-entry toc-h3"><a href="#Installing-datascience-packages---pytorch-and-jupyter">Installing datascience packages - pytorch and jupyter </a></li>
 </ul>
@@ -175,23 +175,24 @@ window.onload = wrap_img;
 <h2 id="Introduction">
 <a class="anchor" href="#Introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction<a class="anchor-link" href="#Introduction"> </a>
 </h2>
-<p><a href="https://forums.fast.ai/u/jeremy">Jeremy</a> has been conducting these official course walk-thrus which started on May 27, 2022 for students of fastaiv5 course. The idea of these course walk-thrus were "going to explain exactly how to do every step, and why we do things the way we do".</p>
-<p>We in the sense <code>fast.ai</code> approach of development.I personally felt some of these things were very useful to me  and I may use it again and again. So thought of writing it down. Personally I got more value out of these walk-thrus than some of lessons in course as I felt it covered answers to some of things which I was searching for a long time. So the first walk thrus was on the topic: <code>Introduction to the terminal. How to install Python and libraries</code>.
+<p><a href="https://forums.fast.ai/u/jeremy">Jeremy</a> has been conducting these official course walk-thrus which started on May 27, 2022 for students of <a href="https://itee.uq.edu.au/event/2022/practical-deep-learning-coders-uq-fastai">astaiv5 course</a>. The idea of these course walk-thrus were "going to explain exactly how to do every step, and why we do things the way we do".</p>
+<p>We in the sense <code>fastai</code> approach of development. It was very useful to me and it covered answers to some of things which I was searching for a long time. I will use it again and again, so thought of writing it down to refer later. The first walk thrus was on the topic: <code>Introduction to the terminal. How to install Python and libraries</code> and I felt I got more value out of these walk-thrus than some of lessons in course
 </p>
 <div class="flash flash-warn">
     <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
     <strong>Important: </strong>The right way here means the way Jeremy does stuff. Obiviously there as thousand of way to do thing, yet going through each ways has it’s own pros/cons. 
 </div>
-<h2 id="What's-terminal,-how-to-work-with-it?">
-<a class="anchor" href="#What's-terminal,-how-to-work-with-it?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's terminal, how to work with it?<a class="anchor-link" href="#What's-terminal,-how-to-work-with-it?"> </a>
+<h2 id="🚖-What's-terminal,-how-to-work-with-it?">
+<a class="anchor" href="#%F0%9F%9A%96-What's-terminal,-how-to-work-with-it?" aria-hidden="true"><span class="octicon octicon-link"></span></a>🚖 What's terminal, how to work with it?<a class="anchor-link" href="#%F0%9F%9A%96-What's-terminal,-how-to-work-with-it?"> </a>
 </h2>
 <h3 id="Terminal-vs-Shell">
 <a class="anchor" href="#Terminal-vs-Shell" aria-hidden="true"><span class="octicon octicon-link"></span></a>Terminal vs Shell<a class="anchor-link" href="#Terminal-vs-Shell"> </a>
 </h3>
-<p>A terminal is a program which can display console window to run program. Yet thing inside is not stricly a terminal. 
-The black coloured stuff, which you see in movies used by hackers is Terminal.</p>
+<p>A terminal is a program which can display console window to run program. Yet thing inside is not stricly a terminal, but called a shell. 
+The black coloured stuff, which you see in movies used by hackers is Terminal as shown in image below.</p>
 <p><img src="https://user-images.githubusercontent.com/24592806/170852543-17bdb268-7ace-43c6-b1a0-a2b5b0a9ac43.png" alt="image"></p>
-<p>Usually in a <strong>terminal there can be multiple shells</strong>, which can have different colours, shells etc. So terminal and shell are totally different in meaning. You can think shell as the stuff which does main things, while terminal is like the big parent ship. In a windows terminal it can start no of shells like <code>PowerShell, Command Prompt, Ubuntu</code> etc... Most of the time we use both terminal and shell interchangebly which is ok.</p>
+<p>Usually in a <strong>terminal there can be multiple shells</strong>, which can have different colours, shells etc. So terminal and shell are totally different in meaning. You can think shell as the a ship which does main things it's supposed to do like running program, while terminal is like the a group of ships which is usually controlled by a parent like a corporal.</p>
+<p>In a windows terminal it can start no of shells like <code>PowerShell, Command Prompt, Ubuntu</code> etc... Most of the time we use both terminal and shell interchangebly which is ok.</p>
 <h3 id="Installing-Terminal-&amp;-Shell">
 <a class="anchor" href="#Installing-Terminal-&amp;-Shell" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing Terminal &amp; Shell<a class="anchor-link" href="#Installing-Terminal-&amp;-Shell"> </a>
 </h3>
@@ -210,29 +211,29 @@ The black coloured stuff, which you see in movies used by hackers is Terminal.</
 <a class="anchor" href="#Keyboard-shortcuts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Keyboard shortcuts<a class="anchor-link" href="#Keyboard-shortcuts"> </a>
 </h3>
 <p>Some of the useful keyboard shortcuts shared during lesson and in forums are as follows:</p>
-<p><strong>Shared by Jeremy</strong></p>
-<p><kbd>Ctrl+`Shift`+`1`</kbd> - Open shell set for default profile.</p>
-<p><kbd>`Ctrl`+`Shift`+`3`</kbd> - Open shell listed as number 3 in WSL.</p>
-<p><kbd>`Alt`+`Enter`</kbd> - Enter terminal in full screen.</p>
+<p><strong>Shared by <a href="https://forums.fast.ai/u/jeremy/summary">Jeremy</a></strong></p>
+<p><kbd>Ctrl+Shift+1</kbd> - Open shell set for default profile.</p>
+<p><kbd>Ctrl+Shift+3</kbd> - Open shell listed as number 3 in WSL.</p>
+<p><kbd>Alt+Enter</kbd> - Enter terminal in full screen.</p>
 <p><kbd> Ctrl + r </kbd> - Recursvie back search to search the previous typed commands.</p>
 <p><kbd>Ctrl-a</kbd> - Move to the start of the current line.</p>
 <p><kbd>Ctrl-e</kbd> - Move to the end of the line.</p>
 <p><kbd>Tab</kbd> Autocomplete.</p>
-<p><strong>Shared by <a href="https://forums.fast.ai/u/miwojc">miwojc</a></strong></p>
-<p><kbd>Ctrl-f</kbd> Move forward a character.
-<kbd>Ctrl-b</kbd> Move back a character.
-<kbd>Alt-f</kbd> Move forward to the end of the next word. Words are alphanumeric.
-<kbd>Alt-b</kbd> Move back to the start of the current or previous word. Words are alphanumeric.
-<kbd>Ctrl-l</kbd> Clear the screen.</p>
-<p><kbd>Ctrl-p</kbd> Fetch the previous command from the history list (same as up but easier to reach).
-<kbd>Ctrl-n</kbd> Fetch the next command from the history list (same as down).
-<kbd>Ctrl-r</kbd> Search backward through history.</p>
+<p><strong>Shared by <a href="https://forums.fast.ai/u/miwojc/summary">miwojc</a></strong></p>
+<p><kbd>Ctrl-f</kbd> Move forward a character.</p>
+<p><kbd>Ctrl-b</kbd> Move back a character.</p>
+<p><kbd>Alt-f</kbd> Move forward to the end of the next word. Words are alphanumeric.</p>
+<p><kbd>Alt-b</kbd> Move back to the start of the current or previous word. Words are alphanumeric.</p>
+<p><kbd>Ctrl-l</kbd> Clear the screen.</p>
+<p><kbd>Ctrl-p</kbd> Fetch the previous command from the history list (same as up but easier to reach).</p>
+<p><kbd>Ctrl-n</kbd> Fetch the next command from the history list (same as down).</p>
+<p><kbd>Ctrl-r</kbd> Search backward through history.</p>
 <p><kbd>Ctrl-d</kbd> Delete the character under the cursor.</p>
-<p><kbd>Ctrl-k </kbd>Kill (cut) forwards to the end of the line.
-<kbd>Ctrl-u</kbd> Kill (cut) backwards to the start of the line.
-<kbd>Alt-d</kbd> Kill (cut) forwards to the end of the current word.
-<kbd>Ctrl-w Kill</kbd> (cut) backwards to the start of the current word.</p>
-<p><strong>Shared by <a href="https://forums.fast.ai/u/kurianbenoy">Kurian</a></strong></p>
+<p><kbd>Ctrl-k </kbd>Kill (cut) forwards to the end of the line.</p>
+<p><kbd>Ctrl-u</kbd> Kill (cut) backwards to the start of the line.</p>
+<p><kbd>Alt-d</kbd> Kill (cut) forwards to the end of the current word.</p>
+<p><kbd>Ctrl-w</kbd> Kill(cut) backwards to the start of the current word.</p>
+<p><strong>Shared by <a href="https://forums.fast.ai/u/kurianbenoy/summary">Kurian</a></strong></p>
 <p><kbd>Alt Shift + </kbd> - Open a new vertical pane</p>
 <p><kbd>Alt Shift -</kbd> - Open a new horizontal pane</p>
 <p><kbd>Ctrl Shift w</kbd> - Closing a Pane</p>
@@ -243,8 +244,8 @@ The black coloured stuff, which you see in movies used by hackers is Terminal.</
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-install-Python-Packages-for-datascience?">
-<a class="anchor" href="#How-to-install-Python-Packages-for-datascience?" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to install Python Packages for datascience?<a class="anchor-link" href="#How-to-install-Python-Packages-for-datascience?"> </a>
+<h2 id="🔰-How-to-install-Python-Packages-for-datascience">
+<a class="anchor" href="#%F0%9F%94%B0-How-to-install-Python-Packages-for-datascience" aria-hidden="true"><span class="octicon octicon-link"></span></a>🔰 How to install Python Packages for datascience<a class="anchor-link" href="#%F0%9F%94%B0-How-to-install-Python-Packages-for-datascience"> </a>
 </h2>
 <p></p>
 <div class="flash flash-warn">
@@ -267,8 +268,8 @@ bash Mambaforge-Linux-x86_64.sh</code></pre>
     <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
     <strong>Note: </strong>Jeremy recommends to install popular libraries which are supported in anaconda from mamba. If it’s not there in conda, or something which requires editable install use pip.
 </div>
-<h3 id="Uninstalling-mamba/conda">
-<a class="anchor" href="#Uninstalling-mamba/conda" aria-hidden="true"><span class="octicon octicon-link"></span></a>Uninstalling mamba/conda<a class="anchor-link" href="#Uninstalling-mamba/conda"> </a>
+<h3 id="🐛-Uninstalling-mamba/conda">
+<a class="anchor" href="#%F0%9F%90%9B-Uninstalling-mamba/conda" aria-hidden="true"><span class="octicon octicon-link"></span></a>🐛 Uninstalling mamba/conda<a class="anchor-link" href="#%F0%9F%90%9B-Uninstalling-mamba/conda"> </a>
 </h3>
 <p></p>
 <div class="flash">
@@ -304,7 +305,7 @@ blog  downloads  mambaforge
 <h3 id="Using-fastsetup">
 <a class="anchor" href="#Using-fastsetup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using fastsetup<a class="anchor-link" href="#Using-fastsetup"> </a>
 </h3>
-<p>Goto <a href="github.com/fastai/fastsetup">github repo</a> and download the <a href="https://raw.githubusercontent.com/fastai/fastsetup/master/setup-conda.sh">setup-conda.sh file</a>.</p>
+<p><a href="github.com/fastai/fastsetup">Goto github repository</a> and download the <a href="https://raw.githubusercontent.com/fastai/fastsetup/master/setup-conda.sh">setup-conda.sh file</a>.</p>
 
 <pre><code>wget https://raw.githubusercontent.com/fastai/fastsetup/master/setup-conda.sh</code></pre>
 <p>This is a normal shell script, so just run the shellscript to install mamba as follows:</p>
