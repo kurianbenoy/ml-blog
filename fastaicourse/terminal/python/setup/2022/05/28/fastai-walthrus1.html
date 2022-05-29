@@ -4,22 +4,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Introduction to linux Terminal and Installing Python Packages &amp; Libraries for Data Sciene | KurianBenoy</title>
+<title>Installing Python Packages &amp; setting up libraries for Data Sciene - the right way | KurianBenoy</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Introduction to linux Terminal and Installing Python Packages &amp; Libraries for Data Sciene" />
+<meta property="og:title" content="Installing Python Packages &amp; setting up libraries for Data Sciene - the right way" />
 <meta name="author" content="Kurian Benoy" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/fastaicourse/terminal/python/2022/05/28/fastai-walthrus1.html" />
-<meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/fastaicourse/terminal/python/2022/05/28/fastai-walthrus1.html" />
+<link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/fastaicourse/terminal/python/setup/2022/05/28/fastai-walthrus1.html" />
+<meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/fastaicourse/terminal/python/setup/2022/05/28/fastai-walthrus1.html" />
 <meta property="og:site_name" content="KurianBenoy" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-05-28T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Introduction to linux Terminal and Installing Python Packages &amp; Libraries for Data Sciene" />
+<meta property="twitter:title" content="Installing Python Packages &amp; setting up libraries for Data Sciene - the right way" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-05-28T00:00:00-05:00","datePublished":"2022-05-28T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Introduction to linux Terminal and Installing Python Packages &amp; Libraries for Data Sciene","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastaicourse/terminal/python/2022/05/28/fastai-walthrus1.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastaicourse/terminal/python/2022/05/28/fastai-walthrus1.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-05-28T00:00:00-05:00","datePublished":"2022-05-28T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Installing Python Packages &amp; setting up libraries for Data Sciene - the right way","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastaicourse/terminal/python/setup/2022/05/28/fastai-walthrus1.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastaicourse/terminal/python/setup/2022/05/28/fastai-walthrus1.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ml-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kurianbenoy.github.io/ml-blog/feed.xml" title="KurianBenoy" /><link rel="shortcut icon" type="image/x-icon" href="/ml-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -90,7 +90,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Introduction to linux Terminal and Installing Python Packages &amp; Libraries for Data Sciene</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-05-28T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Installing Python Packages &amp; setting up libraries for Data Sciene - the right way</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-05-28T00:00:00-05:00" itemprop="datePublished">
         May 28, 2022
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -98,7 +98,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      4 min read
     
 </span></p>
 
@@ -112,6 +112,9 @@ window.onload = wrap_img;
         &nbsp;
       
         <a class="category-tags-link" href="/ml-blog/categories/#python">python</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ml-blog/categories/#setup">setup</a>
         
       
       </p>
@@ -140,7 +143,15 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#Introduction">Introduction </a></li>
-<li class="toc-entry toc-h2"><a href="#What-is-a-terminal?-What-is-a-shell?-Why-use-them?">What is a terminal? What is a shell? Why use them? </a></li>
+<li class="toc-entry toc-h2"><a href="#What's-terminal,-how-to-work-with-it?">What&#39;s terminal, how to work with it? </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Terminal-vs-Shell">Terminal vs Shell </a></li>
+<li class="toc-entry toc-h3"><a href="#Installing-Terminal-&-Shell">Installing Terminal &amp; Shell </a></li>
+<li class="toc-entry toc-h3"><a href="#Handy-Tips">Handy Tips </a></li>
+<li class="toc-entry toc-h3"><a href="#Keyboard-shortcuts">Keyboard shortcuts </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#How-to-install-Python-Packages-for-datascience?">How to install Python Packages for datascience? </a></li>
 <li class="toc-entry toc-h2"><a href="#Installing-Python-Packages">Installing Python Packages </a></li>
 <li class="toc-entry toc-h2"><a href="#Using-fastsetup">Using fastsetup </a></li>
 <li class="toc-entry toc-h2"><a href="#Uninstalling-packages">Uninstalling packages </a></li>
@@ -160,25 +171,77 @@ window.onload = wrap_img;
 <h2 id="Introduction">
 <a class="anchor" href="#Introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction<a class="anchor-link" href="#Introduction"> </a>
 </h2>
-<p><a href="https://forums.fast.ai/u/jeremy">Jeremy</a> has been conducting these official course walk-thrus which start on May 27, 22 for students of fastaiv5 course. I personally felt some of these things were very useful to me personally, and I may use it again and again. So thought of writing it down.</p>
-<p>You can install terminal in Windows by downloading <a href="https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=en-us&amp;gl=US">Windows terminal</a>. In case of linux, just type terminal and you will notice it will come with a terminal. In MacOS, you can just open terminal.</p>
-<h2 id="What-is-a-terminal?-What-is-a-shell?-Why-use-them?">
-<a class="anchor" href="#What-is-a-terminal?-What-is-a-shell?-Why-use-them?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is a terminal? What is a shell? Why use them?<a class="anchor-link" href="#What-is-a-terminal?-What-is-a-shell?-Why-use-them?"> </a>
+<p><a href="https://forums.fast.ai/u/jeremy">Jeremy</a> has been conducting these official course walk-thrus which started on May 27, 2022 for students of fastaiv5 course. The idea of these course walk-thrus were "going to explain exactly how to do every step, and why we do things the way we do".</p>
+<p>We in the sense <code>fast.ai</code> approach of development.I personally felt some of these things were very useful to me  and I may use it again and again. So thought of writing it down. Personally I got more value out of these walk-thrus than some of lessons in course as I felt it covered answers to some of things which I was searching for a long time. So the first walk thrus was on the topic: <code>Introduction to the terminal. How to install Python and libraries</code>.
+</p>
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
+    <strong>Important: </strong>The right way here means the way Jeremy does stuff. Obiviously there as thousand of way to do thing, yet going through each ways has it’s own pros/cons. 
+</div>
+<h2 id="What's-terminal,-how-to-work-with-it?">
+<a class="anchor" href="#What's-terminal,-how-to-work-with-it?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's terminal, how to work with it?<a class="anchor-link" href="#What's-terminal,-how-to-work-with-it?"> </a>
 </h2>
-<p>A terminal is a program which can display console window to run program. Yet thing inside is not stricly a terminal. Usually in a terminal there can be multiple shells, which can have different colours, shells etc. In a windows terminal it can start no of shells like PowerShell, Command Prompt, Ubuntu etc. We use both interchangebly which is ok.</p>
-<p>In Windows, Jeremy recommends to use <a href="https://docs.microsoft.com/en-us/windows/wsl/install">WSL</a>. It's a good idea to change the default shell from <code>Power shell to Ubuntu</code> for easy usage. Also learn some shortcuts like:</p>
+<h3 id="Terminal-vs-Shell">
+<a class="anchor" href="#Terminal-vs-Shell" aria-hidden="true"><span class="octicon octicon-link"></span></a>Terminal vs Shell<a class="anchor-link" href="#Terminal-vs-Shell"> </a>
+</h3>
+<p>A terminal is a program which can display console window to run program. Yet thing inside is not stricly a terminal. 
+The black coloured stuff, which you see in movies used by hackers is Terminal.</p>
+<p><img src="https://user-images.githubusercontent.com/24592806/170852543-17bdb268-7ace-43c6-b1a0-a2b5b0a9ac43.png" alt="image"></p>
+<p>Usually in a <strong>terminal there can be multiple shells</strong>, which can have different colours, shells etc. So terminal and shell are totally different in meaning. You can think shell as the stuff which does main things, while terminal is like the big parent ship. In a windows terminal it can start no of shells like <code>PowerShell, Command Prompt, Ubuntu</code> etc... Most of the time we use both terminal and shell interchangebly which is ok.</p>
+<h3 id="Installing-Terminal-&amp;-Shell">
+<a class="anchor" href="#Installing-Terminal-&amp;-Shell" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing Terminal &amp; Shell<a class="anchor-link" href="#Installing-Terminal-&amp;-Shell"> </a>
+</h3>
+<p>You can install terminal in Windows by downloading <a href="https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=en-us&amp;gl=US">Windows terminal</a>. In case of linux/MacOS, you can just search for terminal as it will come with a terminal pre-installed.</p>
+<p>In Windows, Jeremy recommends to use <a href="https://docs.microsoft.com/en-us/windows/wsl/install">WSL</a>, which install a linux distribution within windows and then install <a href="https://apps.microsoft.com/store/detail/ubuntu/9PDXGNCFSCZV">Ubuntu from Microsoft Store</a>.</p>
+<h3 id="Handy-Tips">
+<a class="anchor" href="#Handy-Tips" aria-hidden="true"><span class="octicon octicon-link"></span></a>Handy Tips<a class="anchor-link" href="#Handy-Tips"> </a>
+</h3>
+<p>It's a good idea to change the default shell from <code>Power shell to Ubuntu</code> for easy usage. Also learn some keyboard shortcuts.
+</p>
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
+    <strong>Important: </strong>Learning Keyboard shortcuts can be immensely valuable.
+</div>
+<h3 id="Keyboard-shortcuts">
+<a class="anchor" href="#Keyboard-shortcuts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Keyboard shortcuts<a class="anchor-link" href="#Keyboard-shortcuts"> </a>
+</h3>
+<p>Some of the useful keyboard shortcuts shared during lesson and in forums are as follows:</p>
+<p><strong>Shared by Jeremy</strong></p>
+<p><kbd>Ctrl+`Shift`+`1`</kbd> - Open shell set for default profile.</p>
+<p><kbd>`Ctrl`+`Shift`+`3`</kbd> - Open shell listed as number 3 in WSL.</p>
+<p><kbd>`Alt`+`Enter`</kbd> - Enter terminal in full screen.</p>
+<p><kbd> Ctrl + r </kbd> - Recursvie back search to search the previous typed commands.</p>
+<p><kbd>Ctrl-a</kbd> - Move to the start of the current line.</p>
+<p><kbd>Ctrl-e</kbd> - Move to the end of the line.</p>
+<p><kbd>Tab</kbd> Autocomplete.</p>
+<p><strong>Shared by <a href="https://forums.fast.ai/u/miwojc">miwojc</a></strong></p>
+<p><kbd>Ctrl-f</kbd> Move forward a character.
+<kbd>Ctrl-b</kbd> Move back a character.
+<kbd>Alt-f</kbd> Move forward to the end of the next word. Words are alphanumeric.
+<kbd>Alt-b</kbd> Move back to the start of the current or previous word. Words are alphanumeric.
+<kbd>Ctrl-l</kbd> Clear the screen.</p>
+<p><kbd>Ctrl-p</kbd> Fetch the previous command from the history list (same as up but easier to reach).
+<kbd>Ctrl-n</kbd> Fetch the next command from the history list (same as down).
+<kbd>Ctrl-r</kbd> Search backward through history.</p>
+<p><kbd>Ctrl-d</kbd> Delete the character under the cursor.</p>
+<p><kbd>Ctrl-k </kbd>Kill (cut) forwards to the end of the line.
+<kbd>Ctrl-u</kbd> Kill (cut) backwards to the start of the line.
+<kbd>Alt-d</kbd> Kill (cut) forwards to the end of the current word.
+<kbd>Ctrl-w Kill</kbd> (cut) backwards to the start of the current word.</p>
+<p><strong>Shared by <a href="https://forums.fast.ai/u/kurianbenoy">Kurian</a></strong></p>
+<p><kbd>Alt Shift + </kbd> - Open a new vertical pane</p>
+<p><kbd>Alt Shift -</kbd> - Open a new horizontal pane</p>
+<p><kbd>Ctrl Shift w</kbd> - Closing a Pane</p>
+<h2 id="How-to-install-Python-Packages-for-datascience?">
+<a class="anchor" href="#How-to-install-Python-Packages-for-datascience?" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to install Python Packages for datascience?<a class="anchor-link" href="#How-to-install-Python-Packages-for-datascience?"> </a>
+</h2>
 <p><code>Ctrl</code>+<code>Shift</code>+<code>1</code> - Open shell set for default profile
 <code>Ctrl</code>+<code>Shift</code>+<code>3</code> - Open shell listed as number 3 in WSL
 <code>Alt</code>+<code>Enter</code> - Enter screen in full screen
 <code>Alt</code>+<code>Shift</code>+<code>+</code> - Open a new vertical pane
 <code>Alt</code>+<code>Shift</code>+<code>-</code> - Open a new horizontal pane
 <code>Ctrl</code> + <code>l</code> - Clear the screen
-<code>Ctrl</code>+<code>Shift</code>+<code>w</code> - Closing a Pane
-</p>
-<div class="flash flash-warn">
-    <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
-    <strong>Important: </strong>Learning Keyboard shortcuts can be immensely valuable.
-</div>
+<code>Ctrl</code>+<code>Shift</code>+<code>w</code> - Closing a Pane</p>
 <h2 id="Installing-Python-Packages">
 <a class="anchor" href="#Installing-Python-Packages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing Python Packages<a class="anchor-link" href="#Installing-Python-Packages"> </a>
 </h2>
@@ -236,7 +299,7 @@ Let's install first the python packages with mamba aka. faster version of conda.
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/ml-blog/fastaicourse/terminal/python/2022/05/28/fastai-walthrus1.html" hidden></a>
+</script><a class="u-url" href="/ml-blog/fastaicourse/terminal/python/setup/2022/05/28/fastai-walthrus1.html" hidden></a>
 </article>
 
       </div>
