@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Starting an open-source project - Malayalam Text Classifier | KurianBenoy</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Starting an open-source project - Malayalam Text Classifier" />
+<meta name="author" content="Kurian Benoy" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/malayalamtextmodels/malayalam/nlp/opensource/ml/deep%20learning/smc/2022/05/30/malayalamtext-0.html" />
+<meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/malayalamtextmodels/malayalam/nlp/opensource/ml/deep%20learning/smc/2022/05/30/malayalamtext-0.html" />
+<meta property="og:site_name" content="KurianBenoy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-05-30T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Starting an open-source project - Malayalam Text Classifier" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-05-30T00:00:00-05:00","datePublished":"2022-05-30T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Starting an open-source project - Malayalam Text Classifier","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/malayalamtextmodels/malayalam/nlp/opensource/ml/deep%20learning/smc/2022/05/30/malayalamtext-0.html"},"url":"https://kurianbenoy.github.io/ml-blog/malayalamtextmodels/malayalam/nlp/opensource/ml/deep%20learning/smc/2022/05/30/malayalamtext-0.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/ml-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kurianbenoy.github.io/ml-blog/feed.xml" title="KurianBenoy" /><link rel="shortcut icon" type="image/x-icon" href="/ml-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/ml-blog/">KurianBenoy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/ml-blog/about/">About Me</a><a class="page-link" href="/ml-blog/search/">Search</a><a class="page-link" href="/ml-blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Starting an open-source project - Malayalam Text Classifier</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-05-30T00:00:00-05:00" itemprop="datePublished">
+        May 30, 2022
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Kurian Benoy</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/ml-blog/categories/#malayalamtextmodels">malayalamtextmodels</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ml-blog/categories/#malayalam">malayalam</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ml-blog/categories/#NLP">NLP</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ml-blog/categories/#opensource">opensource</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ml-blog/categories/#ML">ML</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ml-blog/categories/#Deep learning">Deep learning</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ml-blog/categories/#SMC">SMC</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/kurianbenoy/ml-blog/tree/master/_notebooks/2022-05-30-malayalamtext-0.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/ml-blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/kurianbenoy/ml-blog/blob/master/_notebooks/2022-05-30-malayalamtext-0.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/ml-blog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Why-I-am-starting-this-project?">Why I am starting this project? </a></li>
+<li class="toc-entry toc-h2"><a href="#Problem-Domain">Problem Domain </a></li>
+<li class="toc-entry toc-h2"><a href="#Why-Text-classification-is-interesting?">Why Text classification is interesting? </a></li>
+<li class="toc-entry toc-h2"><a href="#Previous--work:-Vaaku2Vec">Previous  work: Vaaku2Vec </a></li>
+<li class="toc-entry toc-h2"><a href="#What's-the-plan-for-the-project?">What&#39;s the plan for the project? </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-05-30-malayalamtext-0.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Why-I-am-starting-this-project?">
+<a class="anchor" href="#Why-I-am-starting-this-project?" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why I am starting this project?<a class="anchor-link" href="#Why-I-am-starting-this-project?"> </a>
+</h2>
+<p>I have been doing the fastai course since 2018. Yet I have been taking it seriously probably, only after I bought the book <a href="https://kurianbenoy.com/2021-06-10-Fast-group/">Deep Learning for Coders with FastAI &amp; Pytorch</a> almost one year back. This year I took the <a href="https://itee.uq.edu.au/event/2022/practical-deep-learning-coders-uq-fastai">fastai v5 course</a>, and I feel it's time to follow a piece of advice which I have heard multiple times.
+</p>
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
+    <strong>Important: </strong>Jeremy Howard, who is teaching this course and wrote the book prompts you to take what you learned and apply it to something that has meaning for you. (This is something that most of those who’ve found any success with the course <a href="https://sanyambhutani.com/how-not-to-do-fast-ai--or-any-ml-mooc-/">emphasise repeatedly</a>.)
+</div>
+<h2 id="Problem-Domain">
+<a class="anchor" href="#Problem-Domain" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem Domain<a class="anchor-link" href="#Problem-Domain"> </a>
+</h2>
+<p>According to <a href="https://huggingface.co/tasks/text-classification">huggingface tasks page</a>:</p>
+<blockquote>
+<p>Text Classification is the task of assigning a label or class to a given text. Some use cases are sentiment analysis, natural language inference, and assessing grammatical correctness.</p>
+</blockquote>
+<p>Malayalam is a highly inflectional and agglutinative language compared to other languages. The quantitative complexity of Malayalam classification was <a href="https://kavyamanohar.com/documents/tsd_morph_complexity_ml.pdf">explained in this paper</a>. The computer still doesn't seem to have understood the basic behaviour of the language to do text classification.  Malayalam is a language which morphologically complex making it even more difficult.
+Very few people seem to have applied techniques in deep learning in Malayalam, and it seems to be a good place to see if really deep learning techniques can be applied in my mother tongue, Malayalam. A lot of progress in other languages has happened and in general NLP, yet it's a good time to see if it works in Indic languages like Malayalam.</p>
+<h2 id="Why-Text-classification-is-interesting?">
+<a class="anchor" href="#Why-Text-classification-is-interesting?" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why Text classification is interesting?<a class="anchor-link" href="#Why-Text-classification-is-interesting?"> </a>
+</h2>
+<p>I believe working on tasks like <code>Text classification</code> is way more difficult when we are working in low-resource languages like Malayalam. Yet when working on problems like this, you realize what are things you take for granted in the English language.</p>
+<p>In the English language, there are plenty of labelled datasets on any problem set you to want. A lot of articles and blogs have been written on how to apply various NLP techniques in English. When it comes to Malayalam, there is just a handful of people who have tried and applied this in Malayalam.</p>
+<blockquote>
+<p>Note to myself:Will is more important than Skill and it's important to be tenacious here.
+I believe this is here, it's very important to believe in one's tenacity and try out new things in a field where very less research happening, and there are no proper open datasets for researchers to work on. This is why I feel this project can be challenging, and my approach is to see if the latest transformer approaches can do something or not.</p>
+</blockquote>
+<h2 id="Previous--work:-Vaaku2Vec">
+<a class="anchor" href="#Previous--work:-Vaaku2Vec" aria-hidden="true"><span class="octicon octicon-link"></span></a>Previous  work: Vaaku2Vec<a class="anchor-link" href="#Previous--work:-Vaaku2Vec"> </a>
+</h2>
+<p>The most important work in Malayalam text classification as far as I know is <a href="https://github.com/adamshamsudeen/Vaaku2Vec">Vaaku2Vec project - State-of-the-Art Language Modeling and Text Classification in the Malayalam Language</a>.</p>
+<p>According to their Github README:</p>
+<blockquote>
+<p>We trained a Malayalam language model on the Wikipedia article dump from Oct, 2018. The Wikipedia dump had 55k+ articles. The difficulty in training a Malayalam language model is text tokenization since Malayalam is a highly inflectional and agglutinative language. In the current model, we are using an nltk tokenizer (will try better alternative in the future) and the vocab size is 30k. The language model was used to train a classifier which classifies a news into 5 categories (India, Kerala, Sports, Business, Entertainment). Our classifier came out with a whooping 92% accuracy in the classification task.</p>
+</blockquote>
+<p>It was revolutionary at that time, to see deep learning techniques applied to get SOTA in Malayalam. IndicNLP as an organisation did a lot of work, from working on projects like Word2vec, Vaakk2vec etc. They worked on creating a Named entity recognition dataset for Malayalam etc. They conducted Devsprints in colleges like Model Engineering college... and presented their work in Pycon India and Kochi Python. Most of the work was done by <a href="https://www.linkedin.com/in/adamshamsudeen/">Adam Shamsudeen</a> and <a href="https://www.linkedin.com/in/kamalkraj/">Kamal K Raj</a>.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rgCXWaKzMKU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe><h2 id="What's-the-plan-for-the-project?">
+<a class="anchor" href="#What's-the-plan-for-the-project?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the plan for the project?<a class="anchor-link" href="#What's-the-plan-for-the-project?"> </a>
+</h2>
+<p></p>
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
+    <strong>Important: </strong>Cervantes once wrote that "the journey is better than the inn", which means that the process is more valuable than the destination.
+</div>
+At moment, the project doesn't have any concrete goals and it's just me who is working in my free time.
+<p>I have created a <a href="https://github.com/smc/malayalam-text-classifier/issues">few issues</a> and my next blog post will be on creating a baseline model on a private dataset that a few kind folks shared with me. I expect the dataset creation to be an iterative task. I am looking forward to blogging about what I work on and stumble upon in each stage of the project.</p>
+<p>When I was looking for where I wanted to create this as an open-source project obviously, I choose <a href="https://smc.org.in/">Swathanthra Malayalam Community</a> because:</p>
+<ul>
+<li>I feel SMC as an organization played a pivotal part in revolutionizing Malayalam computing and has a strong community presence. They have made a lot of work by creating fonts, helping in internationalization efforts, ...</li>
+<li>People like <a href="https://thottingal.in/">Santhosh Thottingal</a> and <a href="https://kavyamanohar.com/">Kavya Manohar</a> have helped me a lot in my previous failed attempt to <a href="https://github.com/kurianbenoy/MTTS">build TTS with deep learning in Malayalam</a>.</li>
+<li>Some of the open-source projects made by SMC still survive like the website of <a href="https://msc.smc.org.in/">Malayalam Speech Corpus</a> which is impressive to me.</li>
+</ul>
+<p>I would like to thank the following people for all the support and motivation they have given me in starting this open-source project on this occasion:</p>
+<ol>
+<li><a href="https://twitter.com/strickvl/">Alex Strick van Linschoten</a></li>
+<li>
+<a href="https://twitter.com/santhoshtr">Santhosh Thottingal</a> and  <a href="https://twitter.com/kavya_manohar">Kavya Manohar</a>
+</li>
+<li><a href="https://twitter.com/fanbyprinciple">Ashwin Jayaprakash</a></li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="kurianbenoy/ml-blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/ml-blog/malayalamtextmodels/malayalam/nlp/opensource/ml/deep%20learning/smc/2022/05/30/malayalamtext-0.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/ml-blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/ml-blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/ml-blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/kurianbenoy" target="_blank" title="kurianbenoy"><svg class="svg-icon grey"><use xlink:href="/ml-blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/kurianbenoy2" target="_blank" title="kurianbenoy2"><svg class="svg-icon grey"><use xlink:href="/ml-blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
