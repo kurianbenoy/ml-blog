@@ -9,8 +9,8 @@
 <meta property="og:title" content="Building a baseline model for Malayalam Text Classification" />
 <meta name="author" content="Kurian Benoy" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta name="description" content="Simple baseline model with Logistic Regression gave an accuracy close to 87-89% validation accuracy in a private dataset." />
+<meta property="og:description" content="Simple baseline model with Logistic Regression gave an accuracy close to 87-89% validation accuracy in a private dataset." />
 <link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/malayalamtextmodels/malayalam/nlp/opensource/ml/deep%20learning/smc/2022/06/04/baselinemodel.html" />
 <meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/malayalamtextmodels/malayalam/nlp/opensource/ml/deep%20learning/smc/2022/06/04/baselinemodel.html" />
 <meta property="og:site_name" content="KurianBenoy" />
@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Building a baseline model for Malayalam Text Classification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-06-04T00:00:00-05:00","datePublished":"2022-06-04T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Building a baseline model for Malayalam Text Classification","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/malayalamtextmodels/malayalam/nlp/opensource/ml/deep%20learning/smc/2022/06/04/baselinemodel.html"},"url":"https://kurianbenoy.github.io/ml-blog/malayalamtextmodels/malayalam/nlp/opensource/ml/deep%20learning/smc/2022/06/04/baselinemodel.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-06-04T00:00:00-05:00","datePublished":"2022-06-04T00:00:00-05:00","description":"Simple baseline model with Logistic Regression gave an accuracy close to 87-89% validation accuracy in a private dataset.","headline":"Building a baseline model for Malayalam Text Classification","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/malayalamtextmodels/malayalam/nlp/opensource/ml/deep%20learning/smc/2022/06/04/baselinemodel.html"},"url":"https://kurianbenoy.github.io/ml-blog/malayalamtextmodels/malayalam/nlp/opensource/ml/deep%20learning/smc/2022/06/04/baselinemodel.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ml-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kurianbenoy.github.io/ml-blog/feed.xml" title="KurianBenoy" /><link rel="shortcut icon" type="image/x-icon" href="/ml-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -90,7 +90,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Building a baseline model for Malayalam Text Classification</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-06-04T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Building a baseline model for Malayalam Text Classification</h1><p class="page-description">Simple baseline model with Logistic Regression gave an accuracy close to 87-89% validation accuracy in a private dataset.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-06-04T00:00:00-05:00" itemprop="datePublished">
         Jun 4, 2022
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1225,9 +1225,9 @@ Please also refer to the documentation for alternative solver options:
 <h2 id="Using-simple-models-for-labelling">
 <a class="anchor" href="#Using-simple-models-for-labelling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using simple models for labelling<a class="anchor-link" href="#Using-simple-models-for-labelling"> </a>
 </h2>
-<p>One of the best things about using simple models to train is also that you can use it for data labelling efforts. To be honest, I am still learning more about data-annotation and labelling. My friend Alex is an expert though here and checkout his awesome blog How to get the most out of data annotation](<a href="https://blog.zenml.io/data-labelling-annotation">https://blog.zenml.io/data-labelling-annotation</a>). I really loved this visualization at the end.</p>
+<p>One of the best things about using simple models to train is also that you can use it for data labelling efforts. To be honest, I am still learning more about data-annotation and labelling. My friend Alex is an expert though here and checkout his awesome blog <a href="https://blog.zenml.io/data-labelling-annotation">How to get the most out of data annotation</a>. I really loved this image showing 5 steps of datalabelling.</p>
 <p><img src="https://user-images.githubusercontent.com/24592806/171987028-11d5e564-f292-4478-8273-749c5d280045.png" alt="image"></p>
-<p><a href="https://blog.zenml.io/data-labelling-annotation/">Source</a></p>
+<p><a href="https://blog.zenml.io/data-labelling-annotation/">Source and credits: Alex</a></p>
 <p>I see more work on data annotation coming soon as part of this project also. With that have a nice day.</p>
 
 </div>
