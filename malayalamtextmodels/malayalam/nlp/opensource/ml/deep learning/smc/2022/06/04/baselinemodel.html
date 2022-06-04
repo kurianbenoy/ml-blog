@@ -4,22 +4,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Baseline Model | KurianBenoy</title>
+<title>Building a baseline model for Malayalam Text Classification | KurianBenoy</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Baseline Model" />
+<meta property="og:title" content="Building a baseline model for Malayalam Text Classification" />
 <meta name="author" content="Kurian Benoy" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta name="description" content="Simple baseline model with Logistic Regression gave an accuracy close to 87-89% validation accuracy" />
+<meta property="og:description" content="Simple baseline model with Logistic Regression gave an accuracy close to 87-89% validation accuracy" />
 <link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/malayalamtextmodels/malayalam/nlp/opensource/ml/deep%20learning/smc/2022/06/04/baselinemodel.html" />
 <meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/malayalamtextmodels/malayalam/nlp/opensource/ml/deep%20learning/smc/2022/06/04/baselinemodel.html" />
 <meta property="og:site_name" content="KurianBenoy" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-06-04T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Baseline Model" />
+<meta property="twitter:title" content="Building a baseline model for Malayalam Text Classification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-06-04T00:00:00-05:00","datePublished":"2022-06-04T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Baseline Model","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/malayalamtextmodels/malayalam/nlp/opensource/ml/deep%20learning/smc/2022/06/04/baselinemodel.html"},"url":"https://kurianbenoy.github.io/ml-blog/malayalamtextmodels/malayalam/nlp/opensource/ml/deep%20learning/smc/2022/06/04/baselinemodel.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-06-04T00:00:00-05:00","datePublished":"2022-06-04T00:00:00-05:00","description":"Simple baseline model with Logistic Regression gave an accuracy close to 87-89% validation accuracy","headline":"Building a baseline model for Malayalam Text Classification","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/malayalamtextmodels/malayalam/nlp/opensource/ml/deep%20learning/smc/2022/06/04/baselinemodel.html"},"url":"https://kurianbenoy.github.io/ml-blog/malayalamtextmodels/malayalam/nlp/opensource/ml/deep%20learning/smc/2022/06/04/baselinemodel.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ml-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kurianbenoy.github.io/ml-blog/feed.xml" title="KurianBenoy" /><link rel="shortcut icon" type="image/x-icon" href="/ml-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -90,7 +90,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Baseline Model</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-06-04T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Building a baseline model for Malayalam Text Classification</h1><p class="page-description">Simple baseline model with Logistic Regression gave an accuracy close to 87-89% validation accuracy</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-06-04T00:00:00-05:00" itemprop="datePublished">
         Jun 4, 2022
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -98,7 +98,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      8 min read
+      9 min read
     
 </span></p>
 
@@ -151,12 +151,16 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Why-trying-out-simple-baseline-models?">Why trying out simple baseline models? </a></li>
+<li class="toc-entry toc-h2"><a href="#Doing-modeling-with-simple-approaches">Doing modeling with simple approaches </a>
+<ul>
 <li class="toc-entry toc-h3"><a href="#Logistic-regression-+-CountVectorizer">Logistic regression + CountVectorizer </a></li>
 <li class="toc-entry toc-h3"><a href="#Naive-Bayes-Classifier">Naive Bayes Classifier </a></li>
 <li class="toc-entry toc-h3"><a href="#Logistic-Regression-+-Tfidf-Vectorizer">Logistic Regression + Tfidf Vectorizer </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#Evaluating-and-looking-results">Evaluating and looking results </a></li>
 <li class="toc-entry toc-h2"><a href="#Using-simple-models-for-labelling">Using simple models for labelling </a></li>
-<li class="toc-entry toc-h2"><a href="#Concluding-thoughts">Concluding thoughts </a></li>
 </ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
@@ -166,6 +170,28 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Why-trying-out-simple-baseline-models?">
+<a class="anchor" href="#Why-trying-out-simple-baseline-models?" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why trying out simple baseline models?<a class="anchor-link" href="#Why-trying-out-simple-baseline-models?"> </a>
+</h2>
+<p>I have been working on open source project to work on Malayalam text classification approaches. If you want to follow along the previous blogs check the <a href="https://kurianbenoy.com/ml-blog/categories/#malayalamtextmodels">tag #malayalamtextmodels</a></p>
+<p>One of the most under-rated advices which I actually learned from the Approaching almost any Machine learning Problem(AAAMLP) by <a href="https://twitter.com/abhi1thakur">Abhishek Thakur</a> was to start always with simple models and to create a baseline first. This is something <a href="https://twitter.com/jeremyphoward">Jeremy</a> also repeatedly emphasises:</p>
+<blockquote>
+<p>So we should always be careful to benchmark simple models, as see if they're good enough for our needs. In practice, you will often find that simple models will have trouble providing adequate accuracy for more complex tasks, such as recommendation systems, NLP, computer vision, or multivariate time series. But there's no need to guess -- it's so easy to try a few different models, there's no reason not to give the simpler ones a go too!</p>
+</blockquote>
+<p><a href="https://github.com/fastai/course22/blob/master/07-how-random-forests-really-work.ipynb">source:7-how-random-forests-really-work</a></p>
+<h2 id="Doing-modeling-with-simple-approaches">
+<a class="anchor" href="#Doing-modeling-with-simple-approaches" aria-hidden="true"><span class="octicon octicon-link"></span></a>Doing modeling with simple approaches<a class="anchor-link" href="#Doing-modeling-with-simple-approaches"> </a>
+</h2>
+<p>Instead of directly trying out transformers models, I first thought of working with some simple models and see how well they perform. Since I had previously read AAAMLP and seen Abhisheks chapter on how trying out simple techniques in IMDB dataset have him impressive results. I also thought of trying the same approaches.</p>
+<p>What follows is my attempt to follow steps initially outlined in AAAMLP book.My code doesn't depart from the original code in book much.</p>
+<p>Let's start off by importing libraries:</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -239,7 +265,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For training, I used a privately shared dataset with me which contained news articles with their associated labels. It contained almost 9000 sentences labelled in 6 categories of news like Sports, Kerala, Business, Gulf, India, Entertainment.</p>
+<p>For training, I used a privately shared dataset with me which contained news articles with their associated labels. It contained almost 9000+ sentences labelled in 6 categories of news like Sports, Kerala, Business, Gulf, India, Entertainment.</p>
 
 </div>
 </div>
@@ -1199,25 +1225,10 @@ Please also refer to the documentation for alternative solver options:
 <h2 id="Using-simple-models-for-labelling">
 <a class="anchor" href="#Using-simple-models-for-labelling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using simple models for labelling<a class="anchor-link" href="#Using-simple-models-for-labelling"> </a>
 </h2>
-<p>One of the best things about using simple models to train is also that you can use it for data labelling efforts.</p>
+<p>One of the best things about using simple models to train is also that you can use it for data labelling efforts. To be honest, I am still learning more about data-annotation and labelling. My friend Alex is an expert though here and checkout his awesome blog How to get the most out of data annotation](<a href="https://blog.zenml.io/data-labelling-annotation">https://blog.zenml.io/data-labelling-annotation</a>). I really loved this visualization at the end.</p>
 <p><img src="https://user-images.githubusercontent.com/24592806/171987028-11d5e564-f292-4478-8273-749c5d280045.png" alt="image"></p>
 <p><a href="https://blog.zenml.io/data-labelling-annotation/">Source</a></p>
-<p>Check out this awesome blog on <a href="https://blog.zenml.io/data-labelling-annotation/">How to get the most out of data annotation to see how</a></p>
-<h2 id="Concluding-thoughts">
-<a class="anchor" href="#Concluding-thoughts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Concluding thoughts<a class="anchor-link" href="#Concluding-thoughts"> </a>
-</h2>
-<p>I personally feel that going behind the race of accuracy and state of art is not the right thing to do. With this project, I see more work on data annotation coming soon as part of this project.
-
-</p>
-<center>
-    <div class="jekyll-twitter-plugin">
-<blockquote class="twitter-tweet">
-<p lang="en" dir="ltr">I am always skeptic about any accuracy reported outside of Kaggle. Data leak and wrong validation schemes are way too common.</p>— Ahmet Erdem (@a_erdem4) <a href="https://twitter.com/a_erdem4/status/1532678513958047746?ref_src=twsrc%5Etfw">June 3, 2022</a>
-</blockquote>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
-</center>
-
+<p>I see more work on data annotation coming soon as part of this project also. With that have a nice day.</p>
 
 </div>
 </div>
