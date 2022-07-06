@@ -177,12 +177,10 @@
   
 
   
-
-  
   
 
   
-      ,"page11": {
+      ,"page10": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://kurianbenoy.github.io/ml-blog/robots.txt",
