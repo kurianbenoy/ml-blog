@@ -100,7 +100,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -147,7 +147,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>After attending an introduction to using fastai session conducted by fast.ai. I was excited to use weights and biases library along with a few of my hobby projects. I was working on training an Image classification models on the Kaggle competition dataset <a href="https://www.kaggle.com/competitions/tpu-getting-started">Petal to Metal</a>.</p>
+<p>After attending an introduction to using weights &amp; biases along with fastai session conducted by <a href="https://twitter.com/capetorch">Thomas Capaballe</a>. I was excited to use weights and biases library along with a few of my hobby projects. I was working on training an Image classification models on the Kaggle competition dataset <a href="https://www.kaggle.com/competitions/tpu-getting-started">Petal to Metal</a>.</p>
 <p>In general, whenever I am passing a code to any fastai learner objects with callback. I usually directly pass it along with <code>vision_learner</code> as shown in below code.</p>
 
 </div>
@@ -180,6 +180,14 @@ window.onload = wrap_img;
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I exported this model, as I was trying to create a <a href="https://huggingface.co/spaces/kurianbenoy/Identify_which_flower">hugging face spaces to identify various flowers species</a>.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -200,17 +208,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I exported this model, as I was trying to create a <a href="https://huggingface.co/spaces/kurianbenoy/Identify_which_flower">hugging face spaces to identify various flowers species</a>.</p>
 <p>Now I went ahead creating the inference code with requirements for this model. This is when I noticed that the model exported requires <code>wandb</code> library to run the inference code. I was totally surprised, why  it was happening at first.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>After a bit of googling, I found this solution from one of the forum posts written by <a href="twitter.com/waydegilliam">Wayde Gilliam</a>.</p>
-<p><a href="https://forums.fast.ai/t/is-there-anyway-to-call-learn-get-preds-without-triggering-any-of-the-callbacks/64753/10">Original answer</a></p>
 
 </div>
 </div>
@@ -220,6 +218,20 @@ window.onload = wrap_img;
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Why this annoying behaviour?</strong></p>
 <p>It's because when passing the callbacks to <code>Learner</code> class or it's variants like in case of computer vision fastai uses <code>vision_learner</code> class makes it stick around. In my case, I don't want the callback to hang around the <code>Learner</code> class forever, as it's just for training job monitoring only.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After a bit of googling, I found this solution from one of the forum posts written by <a href="twitter.com/waydegilliam">Wayde Gilliam</a>.
+</p>
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
+    <strong>Important: </strong>Instead of adding your callback to <code>Learner</code> … if it is simply used for training, just include it in your call(s) to <code>fit or fit_one_cycle</code>. As the callback is no longer associated to your Learner, they won’t interfere with your call to <code>get_preds()</code>.
+</div>
+<a href="https://forums.fast.ai/t/is-there-anyway-to-call-learn-get-preds-without-triggering-any-of-the-callbacks/64753/10">Original answer</a>.
 <p>So inorder to fix it, I just passed the callbacks I am using directly with <code>fine_tune</code> method directly. Let's check the code to pass callbacks this way.</p>
 
 </div>
