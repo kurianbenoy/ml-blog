@@ -1708,6 +1708,7 @@ as shown in the below screenshot:</p>
 
 <span class="n">learn</span> <span class="o">=</span> <span class="n">from_pretrained_fastai</span><span class="p">(</span><span class="s2">"kurianbenoy/music_genre_classification_baseline"</span><span class="p">)</span>
 
+
 <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
     <span class="n">img</span> <span class="o">=</span> <span class="n">PILImage</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
     <span class="n">_pred</span><span class="p">,</span> <span class="n">_pred_w_idx</span><span class="p">,</span> <span class="n">probs</span> <span class="o">=</span> <span class="n">learn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>

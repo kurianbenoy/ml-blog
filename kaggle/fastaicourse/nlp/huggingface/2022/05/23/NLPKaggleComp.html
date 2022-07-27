@@ -185,7 +185,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">creds</span> <span class="o">=</span> <span class="s1">''</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">creds</span> <span class="o">=</span> <span class="s2">""</span>
 </pre></div>
 
     </div>
@@ -1157,8 +1157,8 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span>
     <span class="n">model</span><span class="p">,</span>
     <span class="n">training_args</span><span class="p">,</span>
-    <span class="n">train_dataset</span><span class="o">=</span><span class="n">model_dataset</span><span class="p">[</span><span class="s1">'train'</span><span class="p">],</span>
-    <span class="n">eval_dataset</span><span class="o">=</span><span class="n">model_dataset</span><span class="p">[</span><span class="s1">'test'</span><span class="p">],</span>
+    <span class="n">train_dataset</span><span class="o">=</span><span class="n">model_dataset</span><span class="p">[</span><span class="s2">"train"</span><span class="p">],</span>
+    <span class="n">eval_dataset</span><span class="o">=</span><span class="n">model_dataset</span><span class="p">[</span><span class="s2">"test"</span><span class="p">],</span>
     <span class="n">data_collator</span><span class="o">=</span><span class="n">data_collator</span><span class="p">,</span>
     <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokz</span><span class="p">,</span>
 <span class="p">)</span>
