@@ -9,19 +9,17 @@
 <meta property="og:title" content="Practical Deep Learning for Coders Course - Tabular Models (Linear Regression &amp; Random Forests)" />
 <meta name="author" content="Kurian Benoy" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This blog-post series captures my weekly notes while I attend the fastaiv5 course conducted by University of Queensland with fast.ai. So off to week 5, where we will get started with NLP and transformers" />
-<meta property="og:description" content="This blog-post series captures my weekly notes while I attend the fastaiv5 course conducted by University of Queensland with fast.ai. So off to week 5, where we will get started with NLP and transformers" />
+<meta name="description" content="This blog-post series captures my weekly notes while I attend the fastaiv5 course conducted by University of Queensland with fast.ai. So off to week 5, where we will get started playing with tabular models." />
+<meta property="og:description" content="This blog-post series captures my weekly notes while I attend the fastaiv5 course conducted by University of Queensland with fast.ai. So off to week 5, where we will get started playing with tabular models." />
 <link rel="canonical" href="https://kurianbenoy.github.io/ml-blog/fastai/fastaicourse/2022/07/28/fastai55.html" />
 <meta property="og:url" content="https://kurianbenoy.github.io/ml-blog/fastai/fastaicourse/2022/07/28/fastai55.html" />
 <meta property="og:site_name" content="KurianBenoy" />
-<meta property="og:image" content="https://kurianbenoy.github.io/ml-blog/images/monsoon.jpg" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-07-28T00:00:00-05:00" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://kurianbenoy.github.io/ml-blog/images/monsoon.jpg" />
+<meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Practical Deep Learning for Coders Course - Tabular Models (Linear Regression &amp; Random Forests)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-07-28T00:00:00-05:00","datePublished":"2022-07-28T00:00:00-05:00","description":"This blog-post series captures my weekly notes while I attend the fastaiv5 course conducted by University of Queensland with fast.ai. So off to week 5, where we will get started with NLP and transformers","headline":"Practical Deep Learning for Coders Course - Tabular Models (Linear Regression &amp; Random Forests)","image":"https://kurianbenoy.github.io/ml-blog/images/monsoon.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastai/fastaicourse/2022/07/28/fastai55.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastai/fastaicourse/2022/07/28/fastai55.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-07-28T00:00:00-05:00","datePublished":"2022-07-28T00:00:00-05:00","description":"This blog-post series captures my weekly notes while I attend the fastaiv5 course conducted by University of Queensland with fast.ai. So off to week 5, where we will get started playing with tabular models.","headline":"Practical Deep Learning for Coders Course - Tabular Models (Linear Regression &amp; Random Forests)","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastai/fastaicourse/2022/07/28/fastai55.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastai/fastaicourse/2022/07/28/fastai55.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ml-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kurianbenoy.github.io/ml-blog/feed.xml" title="KurianBenoy" /> <link rel="shortcut icon" type="image/x-icon" href="/ml-blog/images/favicon.ico">
 
@@ -94,7 +92,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Practical Deep Learning for Coders Course - Tabular Models (Linear Regression &amp; Random Forests)</h1><p class="page-description">This blog-post series captures my weekly notes while I attend the <a href='https://itee.uq.edu.au/event/2022/practical-deep-learning-coders-uq-fastai'>fastaiv5 course conducted by University of Queensland with fast.ai</a>. So off to week 5, where we will get started with NLP and transformers</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-07-28T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Practical Deep Learning for Coders Course - Tabular Models (Linear Regression &amp; Random Forests)</h1><p class="page-description">This blog-post series captures my weekly notes while I attend the <a href='https://itee.uq.edu.au/event/2022/practical-deep-learning-coders-uq-fastai'>fastaiv5 course conducted by University of Queensland with fast.ai</a>. So off to week 5, where we will get started playing with tabular models.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-07-28T00:00:00-05:00" itemprop="datePublished">
         Jul 28, 2022
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -102,7 +100,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -140,8 +138,18 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h2"><a href="#Ensembling">Ensembling </a></li>
-<li class="toc-entry toc-h2"><a href="#Random-forests">Random forests </a></li>
+<li class="toc-entry toc-h2"><a href="#What-is-important-for-an-ML-practitioner">What is important for an ML practitioner </a></li>
+<li class="toc-entry toc-h2"><a href="#Prequisites-for-the-chapter">Prequisites for the chapter </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Inputs:-Pandas-(how-the-data-is-cleaned,-processed)">Inputs: Pandas (how the data is cleaned, processed) </a></li>
+<li class="toc-entry toc-h3"><a href="#Outputs:-sigmoid,-RELU">Outputs: sigmoid, RELU </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Implementing-Linear-model-&-neural-network-from-scratch-notebook">Implementing Linear model &amp; neural network from scratch notebook </a></li>
+<li class="toc-entry toc-h2"><a href="#Go-into-details-of-Linear-models">Go into details of Linear models </a></li>
+<li class="toc-entry toc-h2"><a href="#Neural-networks,-deep-learning">Neural networks, deep learning </a></li>
+<li class="toc-entry toc-h2"><a href="#Framework-example.-Always-use-frameworks">Framework example. Always use frameworks </a></li>
+<li class="toc-entry toc-h2"><a href="#Random-forests-notebook">Random forests notebook </a></li>
 </ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
@@ -154,15 +162,55 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>BTW, it's never a good idea to use functions without understanding them.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-is-important-for-an-ML-practitioner">
+<a class="anchor" href="#What-is-important-for-an-ML-practitioner" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is important for an ML practitioner<a class="anchor-link" href="#What-is-important-for-an-ML-practitioner"> </a>
+</h2>
+<p>Most of the time as a practitioner, your job is to connect a set of inputs to the sets of outputs you want with machine learning together in a framework.</p>
+<p>(Copy statement of Jeremy from start of lesson7 or 8)</p>
+<h2 id="Prequisites-for-the-chapter">
+<a class="anchor" href="#Prequisites-for-the-chapter" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prequisites for the chapter<a class="anchor-link" href="#Prequisites-for-the-chapter"> </a>
+</h2>
+<p>a) What is matrix - n*n array
+b) What is vector? -</p>
+<p>In using matrix product section of notebook 1, a bunch of jargons more like:</p>
+<p>Matrx-vector multiplication
+matrix matrix products</p>
+<h3 id="Inputs:-Pandas-(how-the-data-is-cleaned,-processed)">
+<a class="anchor" href="#Inputs:-Pandas-(how-the-data-is-cleaned,-processed)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inputs: Pandas (how the data is cleaned, processed)<a class="anchor-link" href="#Inputs:-Pandas-(how-the-data-is-cleaned,-processed)"> </a>
+</h3>
+<p>Data cleaning process</p>
+<p>Based on data send the data in form of dependent/independent variables</p>
 <ul>
 <li>Pandas, never delete columns</li>
 <li>replace missing values using model. multiple modes first element</li>
 <li>fillna with modes with simplest most way</li>
 <li>In first baseline model, don't do complicated things at the start. </li>
 <li>Don't discard data</li>
-<li>fastai library tabular implementation</li>
 <li>Long tailed distribution(how it's done, we use logs in maths a lot)</li>
 <li>dummy variables for Pclass</li>
+</ul>
+<h3 id="Outputs:-sigmoid,-RELU">
+<a class="anchor" href="#Outputs:-sigmoid,-RELU" aria-hidden="true"><span class="octicon octicon-link"></span></a>Outputs: sigmoid, RELU<a class="anchor-link" href="#Outputs:-sigmoid,-RELU"> </a>
+</h3>
+<h2 id="Implementing-Linear-model-&amp;-neural-network-from-scratch-notebook">
+<a class="anchor" href="#Implementing-Linear-model-&amp;-neural-network-from-scratch-notebook" aria-hidden="true"><span class="octicon octicon-link"></span></a>Implementing Linear model &amp; neural network from scratch notebook<a class="anchor-link" href="#Implementing-Linear-model-&amp;-neural-network-from-scratch-notebook"> </a>
+</h2>
+<p>Very important notebook even for chapter 8, as it's cross linked.</p>
+<ul>
+<li>
+<p>Talk and dive into details. I feel the lesson should be treated from processiing a set of:</p>
+</li>
+<li>
+<p>fastai library tabular implementation</p>
+</li>
 <li>using pytorch to turn linear</li>
 <li>tensor is what mathematicians call tensor. APL came with the idea called tensor, tensor analysis</li>
 <li>Understanding how much the data/model behaves is very important</li>
@@ -171,19 +219,12 @@ window.onload = wrap_img;
 <li>looping 891 times, uses more like math</li>
 <li>coding with explaination, then writing functions. Such a huge productivity win.</li>
 </ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Doing gradient descent step</strong></p>
-<ul>
-<li>pytorch jargon</li>
-</ul>
+<p>inputs (Passing inputs differently in case of NN, Deep learning etc.)
+outputs (sigmoid)</p>
+<h2 id="Go-into-details-of-Linear-models">
+<a class="anchor" href="#Go-into-details-of-Linear-models" aria-hidden="true"><span class="octicon octicon-link"></span></a>Go into details of Linear models<a class="anchor-link" href="#Go-into-details-of-Linear-models"> </a>
+</h2>
 <p>In titanic, it's very easy to create a random split. Jeremy was involved in creating this dataset, when he founded fastai</p>
-<p><strong>Training linear model</strong></p>
 <ul>
 <li>accuracy doesn't have a sensible gradient</li>
 <li>but we should measure accuracy to get a good understanding</li>
@@ -198,6 +239,11 @@ window.onload = wrap_img;
 <li>Input &amp; output philosophy</li>
 <li>feature engineering in test data with get_dummies? In fastai it has an other category by default</li>
 </ul>
+<h2 id="Neural-networks,-deep-learning">
+<a class="anchor" href="#Neural-networks,-deep-learning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Neural networks, deep learning<a class="anchor-link" href="#Neural-networks,-deep-learning"> </a>
+</h2>
+<p>Neural network one hidden layer
+deep learning - a bunch more hidden layers (for loop)</p>
 <p>training set change and fill values</p>
 <ul>
 <li>column vector, matrix of rank2
@@ -206,30 +252,29 @@ train_dep[:, None] - trailing unit axis</li>
 <li>WHen you run yourself, you realize our models are really good</li>
 <li>Deep learning competition, with very few columns, it's hard to get good results</li>
 </ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Framework notebook:</p>
+<h2 id="Framework-example.-Always-use-frameworks">
+<a class="anchor" href="#Framework-example.-Always-use-frameworks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Framework example. Always use frameworks<a class="anchor-link" href="#Framework-example.-Always-use-frameworks"> </a>
+</h2>
+<p>My perspective: I have seen this cliche argument that for learning ML, you need to go into details and not using frameworks is a step down. Jeremy emphasises always use good frameworks on top of it. Rather than re-inventing from scratch. Lot of the success of fast.ai comes from it not asking practitioners to go into details, I feel. One of the reasons I like frameworks like blurr, Icevision is also because of that and it's helping users.</p>
+<p>During a conversation with Icevision core-developer, Dickson Neoh:</p>
+<p>In icevision, within 10 minutes I can train any object detection model. It may not be most accurate, yet I can iterate so quickly.</p>
+<p><code>Notes</code>:</p>
 <p>pandas
 feature engineering didn't understand</p>
 <p>test_dl(create entire preprocessing used in same framework)</p>
-<h2 id="Ensembling">
-<a class="anchor" href="#Ensembling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ensembling<a class="anchor-link" href="#Ensembling"> </a>
-</h2>
+<p>Ensembling</p>
 <p>Is created, get the prediction and stack the predictions</p>
 <p>get average predictions of 5 seconds, with this we get top 25%</p>
-<h2 id="Random-forests">
-<a class="anchor" href="#Random-forests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Random forests<a class="anchor-link" href="#Random-forests"> </a>
+<h2 id="Random-forests-notebook">
+<a class="anchor" href="#Random-forests-notebook" aria-hidden="true"><span class="octicon octicon-link"></span></a>Random forests notebook<a class="anchor-link" href="#Random-forests-notebook"> </a>
 </h2>
 <p>really popularly algos and very popular in 2000s</p>
 <p>split rows into two group
 binary-split model</p>
 <p>Kernel density plots</p>
-<p>single method, ridiculously simple method in 1990 was 1 R. Then hyper plot to random forests.</p>
+<p>single method, ridiculously simple method in 1990 was 1 R. It was the predecessor to random forests.</p>
+<p><strong>Homework dataset</strong></p>
+<p>Step 4 of Jeremy notebook is to practice with a different dataset. Try applying this techqnique in monthly Kaggle Tabular Playground dataset competition.</p>
 
 </div>
 </div>
