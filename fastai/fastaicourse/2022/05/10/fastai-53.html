@@ -158,8 +158,7 @@ window.onload = wrap_img;
 <a class="anchor" href="#Lesson-Setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lesson Setup<a class="anchor-link" href="#Lesson-Setup"> </a>
 </h2>
 <p>There was a minor delay in streaming the lessons today, as today the sessions where being conducted 
-in-person by Jeremy at University of Queensland. There were 130 people watching live in
-youtube, while there was some notable absentees like <a href="twitter.com/bhutanisanyam1/">Sanyam Bhutani</a>.</p>
+in-person by Jeremy at University of Queensland. There were 130 people watching live in youtube.</p>
 <p>Jeremy started the lesson by saying that usually lesson 1 and 2 are easy for everyone, while it's
 usually from lesson 3 things start getting hard. There is also a lesson 0 on how to do fast.ai?
 
@@ -172,13 +171,13 @@ usually from lesson 3 things start getting hard. There is also a lesson 0 on how
 where Jeremy mentioned about <strong>How to do fast.ai lesson</strong> through the following five steps:</p>
 <ol>
 <li>Watching lecture/book (watching the video first without trying anything)</li>
-<li>Running notebook and Experimentation (going through lesson notebooks and experimenting stuff)</li>
-<li>Reproduce Results (try with fastai clean notebook version, see if you are able to understand and do things on your own)</li>
+<li>Running notebook and experimentation (going through lesson notebooks and experimenting stuff)</li>
+<li>Reproduce results (try with fastai clean notebook version, see if you are able to understand and do things on your own)</li>
 <li>Working on a different dataset (play with a different dataset, paraticipate in kaggle ...)</li>
 </ol>
-<p>Always studying done with other people is the best activity. So it's great to participate in study
+<p>Always studying done with other people is the best way to retain your knowledge. So it's great to participate in study
 groups like <a href="https://www.meetup.com/delft-fast-ai-study-group/">Delft-fastai sessions</a>.</p>
-<p>This week, Jeremy showcased various work based on which all got highest number of votes in share-my group section. My work also got featured 🙂.</p>
+<p>This week, Jeremy showcased the various students projects based on those who got highest number of votes in <a href="https://forums.fast.ai/t/share-your-work-here/96015">share your work here topic in fastai forums</a>. My work also got featured 🙂 in the lesson.</p>
 <p><img src="https://user-images.githubusercontent.com/24592806/168640845-07859116-bf6b-48c7-af61-5ff8a65dc2fb.png" alt="image"></p>
 
 </div>
@@ -191,7 +190,7 @@ groups like <a href="https://www.meetup.com/delft-fast-ai-study-group/">Delft-fa
 <a class="anchor" href="#Dogs-vs-Cat-notebooks--which-image-models-are-the-best?" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dogs vs Cat notebooks- which image models are the best?<a class="anchor-link" href="#Dogs-vs-Cat-notebooks--which-image-models-are-the-best?"> </a>
 </h2>
 <p>Today Jeremy featured, paperspace gradient platform. He has been using it for 
-paperspace, and it's totally amazing. He got something done by them to update fastbook
+his development and it's totally amazing. He got something done by them to update fastbook
 regularly.
 </p>
 <div class="flash flash-warn">
@@ -207,7 +206,7 @@ regularly.
     <strong>Note: </strong>2. Then part which takes inputs, spits out output ... this separate step is deploying (app.ipynb)
 </div>
 <p>Finding good image models, by <a href="https://www.kaggle.com/code/jhoward/which-image-models-are-best/">baselines results along with inference time</a> will help us choose good architecture. He tried levit_models, which didn't work really great.</p>
-<p>From [13:52] he experiments with convnext tiny models from timm library. It got really good accuracy with almost 0.05 loss. At the moment for computer vision there are lot of good architectures, which beats resnets really well. In this case for predicting 37 breeds of dogs we can find categories in dataset using vocab of dataloaders in model.</p>
+<p>From [13:52] in the video, he experiments with convnext tiny models from timm library. It got really good accuracy with almost 0.05 loss. At the moment for computer vision there are lot of good architectures, which beats resnets really well. In this case for predicting 37 breeds of dogs we can find categories in dataset using vocab of dataloaders in model.</p>
 
 <pre><code>labels = model.dls.vocab</code></pre>
 <p>It's very important to understand what's in a model? Using <code>get_submodule</code> in pytorch we can look at the various neural networks, what is their input and ouput and each layers. [21:24]</p>
@@ -931,12 +930,12 @@ filled with already existing function.</p>
 </p>
 <div class="flash">
     <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-    <strong>Note: </strong>The above trick when working with notebooks is a trick told by <a href="https://twitter.com/strickvl">Alex Strick</a> during delft-fastai sessions.
+    <strong>Note: </strong>Thanks to <a href="https://twitter.com/strickvl">Alex Strick</a> for sharing this trick when working with notebooks during delft-fastai sessions.
 </div>
 <img src="https://user-images.githubusercontent.com/24592806/168652892-925abcc5-4d4b-43f1-8309-d80b1376fd1e.png" alt="image">
 <div class="flash flash-warn">
     <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
-    <strong>Important: </strong>Usually when I expalined this, one of my students said this is like how we draw an owl. In deep learning ..., there is just step 1, computer automatically does the step2 by drawing a beautiful owl.
+    <strong>Important: </strong>Usually when I explain this is how neural networks work, one of my students said this is like how we draw an outline of an owl. In deep learning ..., there is just step 1 where we draw outline, computer automatically does the step2 by drawing a beautiful owl.
 </div>
 
 </div>
@@ -955,7 +954,7 @@ filled with already existing function.</p>
     <strong>Important: </strong>For Linear algebra, almost all time you need is matrix multiplcation. In schools, you learn linear algrebra as if you need tons of experience to do machine learning. Yet it’s this operation of matrix multiplication that GPUs are so good at it, and there are even tensor cores for this.
 </div>
 <p><a href="http://matrixmultiplication.xyz/">Refresher on matrix multiplication</a></p>
-<p>Using Titanic dataset,see who survived and who didnt' with excel to understand neural networks. [1:05:00]</p>
+<p>Using Titanic dataset,see who survived and who didnt' with excel to understand neural networks. In video from [1:05:00].</p>
 <p>Next week, we are going to look into how validation sets and more into metrics. We will be looking into Kaggle notebook on <a href="https://www.kaggle.com/code/jhoward/getting-started-with-nlp-for-absolute-beginners">how to get started with NLP</a>.</p>
 
 </div>
