@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>How well does CLIP models classify corn seeds | KurianBenoy</title>
+<title>How well does CLIP models classify corn seeds? | KurianBenoy</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="How well does CLIP models classify corn seeds" />
+<meta property="og:title" content="How well does CLIP models classify corn seeds?" />
 <meta name="author" content="Kurian Benoy" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="How well does CLIP models perform in a real world kaggle competition and is zero-shot image classification great?" />
@@ -17,9 +17,9 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-10-26T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="How well does CLIP models classify corn seeds" />
+<meta property="twitter:title" content="How well does CLIP models classify corn seeds?" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-10-26T00:00:00-05:00","datePublished":"2022-10-26T00:00:00-05:00","description":"How well does CLIP models perform in a real world kaggle competition and is zero-shot image classification great?","headline":"How well does CLIP models classify corn seeds","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastai/clip/openai/2022/10/26/clip.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastai/clip/openai/2022/10/26/clip.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kurian Benoy"},"dateModified":"2022-10-26T00:00:00-05:00","datePublished":"2022-10-26T00:00:00-05:00","description":"How well does CLIP models perform in a real world kaggle competition and is zero-shot image classification great?","headline":"How well does CLIP models classify corn seeds?","mainEntityOfPage":{"@type":"WebPage","@id":"https://kurianbenoy.github.io/ml-blog/fastai/clip/openai/2022/10/26/clip.html"},"url":"https://kurianbenoy.github.io/ml-blog/fastai/clip/openai/2022/10/26/clip.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ml-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kurianbenoy.github.io/ml-blog/feed.xml" title="KurianBenoy" /> <link rel="shortcut icon" type="image/x-icon" href="/ml-blog/images/favicon.ico">
 
@@ -92,7 +92,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">How well does CLIP models classify corn seeds</h1><p class="page-description">How well does CLIP models perform in a real world kaggle competition and is zero-shot image classification great?</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-26T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">How well does CLIP models classify corn seeds?</h1><p class="page-description">How well does CLIP models perform in a real world kaggle competition and is zero-shot image classification great?</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-26T00:00:00-05:00" itemprop="datePublished">
         Oct 26, 2022
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -123,13 +123,26 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-</ul><p>The OpenAI CLIP model are really impressive, and I impressed by the wide range of applications it be used for like
+</ul><p>The OpenAI CLIP model are really impressive and how it’s a foundation for stuff like stable diffusion is awesome. The thing about
+ CLIP models which I am most impressed by is the wide range of applications it be used for like
 <a href="https://huggingface.co/spaces/YiYiXu/it-happened-one-frame-2">Semantic Video Search</a>, <a href="https://github.com/openai/CLIP#zero-shot-prediction">Zero shot image classification</a>, <a href="https://wandb.ai/pcuenq/photo-finder/reports/Creating-a-Semantic-Search-Engine-for-My-Photos--VmlldzoyMDE2NzQ3">searching images in your gallery</a> etc.</p>
 
 <p>I recently <a href="https://arxiv.org/abs/2103.00020">started reading CLIP paper</a> and paper claims to have very high accuracy in
-image clssification accuracy. I thought of trying it out that in a kaggle competition I had recently participated.</p>
+image clssification accuracy. To test that claim, I thought of trying it out that in a kaggle competition I had recently participated.</p>
 
-<p>Even after using one of the best trained CLIP models available it’s getting close to 0.26 score in private LB in a kaggle competition where Resnet or Convnext models can give easily 0.75+ score.</p>
+<p>The kaggle competition is a Corn image classification competition and is asking to classify images of corn seeds into following
+categories:</p>
+
+<ul>
+  <li>pure</li>
+  <li>broken</li>
+  <li>discolored</li>
+  <li>silkcut</li>
+</ul>
+
+<p>I used <code class="language-plaintext highlighter-rouge">open_clip</code>, an open source implementation of CLIP which is having higher accuracy compared to model weights released
+by OpenAI.
+Even after using one of the best trained CLIP models available it got me a classification accuracy score of 27.95% in private LB  whereas Resnet or Convnext models could have given easily above 75% score.</p>
 
 <table>
   <thead>
@@ -152,6 +165,12 @@ image clssification accuracy. I thought of trying it out that in a kaggle compet
       <td>0.28591</td>
       <td>0.27955</td>
       <td><a href="https://www.kaggle.com/code/kurianbenoy/playing-with-clip-model?scriptVersionId=109012620">link</a></td>
+    </tr>
+    <tr>
+      <td>Convnext model</td>
+      <td>0.76149</td>
+      <td>0.75386</td>
+      <td><a href="https://www.kaggle.com/code/kurianbenoy/fastai-baseline-albumentations?scriptVersionId=106051045">link</a></td>
     </tr>
   </tbody>
 </table>
