@@ -1,3 +1,7 @@
+This blog is going to be archived, as I am making my personal and Machine learning blog together. Thanks for supporting me through out the journey and reading all my blog posts.
+
+
+
 [//]: # (This template replaces README.md when someone creates a new repo with the fastpages template.)
 
 ![](https://github.com/kurianbenoy/ml-blog/workflows/CI/badge.svg) 
